@@ -8,7 +8,8 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb1.css">
+	<link rel="stylesheet" href="css/styleb3.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
 	<script>
@@ -43,24 +44,7 @@
 			});
 	</script>
 	<style type="text/css">
-		h1{
-			font-family: 'Poppins', sans-serif;
-			color: #FFFFFF;
-		}
-		ul{
-		}
-		li{
-			font-family: 'Poppins', sans-serif;
-			list-style: none;
-		}
 
-		.fondonegro{
-			background-color: #0a0a0a;
-			text-decoration-color: #0d0d0d;
-		}
-		.fondonegro a{
-			color: #ffffff;
-		}
 		.mgtop{
 			margin-top: 50px;
 		}
@@ -68,14 +52,10 @@
 	</style>
 </head>
 <body>
-<div class="container-fluid fondonegro mt-4">
+<div class="container-fluid fondonegro mt-4" style="height:150px;">
 	<div class="row">
 		<div class="col-3 fondonegro borde1">
 			<div class="container">
-				<div class="row">
-					<div class="col-6 borde1">a</div>
-					<div class="col-6 borde1">a</div>
-				</div>
 			</div>
 		</div>
 <div class="col-4 borde1 mgtop " >
@@ -129,7 +109,7 @@
 </div>
 </div>
 </div>
-		<div class="contentainer border" style="height:auto;">
+		<div class="contentainer border contenedortr" style="height:auto;">
 					<div class="unete1" id="unete">
 						<strong><h1>Unete a la aventura de tu vida</h1></strong>
 						<p>Inscríbete para recibir fechas de actividades

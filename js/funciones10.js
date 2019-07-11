@@ -157,3 +157,26 @@ function agregar_bitacora(){
 		}
 	});
 }
+
+function modificar_usuario(){
+
+	alert("Llega");
+	var parametros = new FormData($("#formmu")[0]);
+	$.ajax({
+		url: "p_modificarusuario.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}

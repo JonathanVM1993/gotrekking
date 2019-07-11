@@ -16,6 +16,10 @@
 		function irModificar(){
 			location.href = "modificar_usuario.php"
 		}
+    function volverPerfil(){
+      location.href = "usuario_perfil.php";
+    }
+
 	</script>
 	<script>
 		$(document).ready(function() {
@@ -48,7 +52,6 @@
 			});
 	</script>
 	<style type="text/css">
-
 	</style>
 
 	</style>
@@ -57,12 +60,9 @@
 	<div class="container-fluid fondonegro mt-4">
 		<div class="row">
 			<div class="col-3 fondonegro borde1">
-				<div class="container">
-
-				</div>
 			</div>
 	<div class="col-4 borde1 mgtop " >
-	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 sticky-top" style="padding:40px" >
+	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
 		<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
 		<li class="nav-item"><a href="noticias.php" class="nav-link">Noticias</a></li>
 		<li class="nav-item"><a href="usuario_viajes.php" class="nav-link">Ver viajes</a></li>
@@ -112,11 +112,11 @@
 	</div>
 	</div>
 	</div>
-		<div class="col-12 contentainer-fluid" style="height:600px; border-radius: 5px;">
+		<div class="col-12 contentainer-fluid" style="height:600px;">
 			<div class="container contenedortr  containerpadre" style="margin-top:180px;">
 				<div class="row">
 					<div class="col-8">
-						<h1>Mi perfil</h1>
+						<h1>Modificar perfil</h1>
 	          <?php
 	          include "conexion.php";
 	          $id = $getId;
@@ -125,13 +125,37 @@
 	          $rowperfil = mysqli_fetch_row($ejecutarperfil);
 	          $getCorreo = $rowperfil[1];
 	          $getRutaFoto = $rowperfil[8];
-	          echo "<p>Correo: $getCorreo</p>";
-	          echo "<p>Nombres: $getNombres</p>";
-	          echo "<p>Apellidos: $getApellidos</p>";
-	          echo "<p>Rut: $getRut</p>";
-	          echo "<p>Edad: $getEdad</p>";
-	          echo "<p>Enfermedad: $getEnfermedad</p>";
-	          echo "<button style onclick='irModificar()'>Modificar</button>";
+	          echo "
+            <form action='' name='formmu' id='formmu' enctype='multipart/form-data' method='post'>
+            <table>
+              <tr>
+                <td><p>Correo:</p></td>
+                <td><input type='text' id='txtCorreo' name='txtCorreo'  placeholder='$getCorreo'></td>
+              </tr>
+              <tr>
+                <td><p>Nombres:</p></td>
+                <td><input type='text' id='txtNombres' name='txtNombres'  placeholder='$getNombres'></td>
+              </tr>
+              <tr>
+                <td><p>Apellidos:</p></td>
+                <td><input type='text' id='txtApellidos' name='txtApellidos'  placeholder='$getApellidos'></td>
+              </tr>
+              <tr>
+                <td><p>Rut:</p></td>
+                <td><input type='text' id='txtRut' name='txtRut'  placeholder='$getRut'></td>
+              </tr>
+              <tr>
+                <td><p>Foto perfil:</p></td>
+                <td><input type='file' id='foto' name='foto' placeholder='' ></td>
+              </tr>
+              <tr>
+                <td><button class='clasebotones' onclick='modificar_usuario()'>Modificar</button></td>
+                <td><button class='clasebotones' onclick='volverPerfil()'>Volver</button></td>
+              </tr>
+            </table>
+            </form>
+            ";
+
 	           ?>
 					</div>
 					<div class="col-4 " style="margin-top:80px;">

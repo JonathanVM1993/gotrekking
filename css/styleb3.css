@@ -1,0 +1,50 @@
+body{
+  background-image: url("../img/bienvenido.jpg");
+  background-size: cover;
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+}
+ul{
+}
+li{
+  font-family: 'Open Sans', sans-serif;
+  list-style: none;
+  color: #ffffff;
+}
+p{
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+.fondonegro{
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+.fondonegro a{
+  color: #ffffff;
+}
+a{
+  color: #ffffff;
+}
+.mgtop{
+  margin-top: 8px;
+}
+
+
+.contenedortr{
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contenedortr p{
+  text-decoration-color: #ffffff;
+}
+.containerpadre{
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.clasebotones{
+  border-radius: 5px;
+  padding: 2px;
+}
