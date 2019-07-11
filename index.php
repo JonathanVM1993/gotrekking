@@ -4,14 +4,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="css/style10.css">
-	<link rel="stylesheet" href="css/boton.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:900&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/styleb1.css">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
-	<script src="js/jsboton.js"></script>
 	<script>
 		$(document).ready(function() {
 			//boton registrar
@@ -43,104 +42,94 @@
 			// boton registrar
 			});
 	</script>
-	<script>
-	var animateButton = function(e) {
-
-		e.preventDefault;
-		//reset animation
-		e.target.classList.remove('animate');
-
-		e.target.classList.add('animate');
-		setTimeout(function(){
-			e.target.classList.remove('animate');
-		},700);
-	};
-
-	var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-	for (var i = 0; i < bubblyButtons.length; i++) {
-		bubblyButtons[i].addEventListener('click', animateButton, false);
-	}
-	</script>
-
-	<style>
+	<style type="text/css">
 		h1{
 			font-family: 'Poppins', sans-serif;
-			font-size: 400%;
 			color: #FFFFFF;
 		}
-
-		a{
-			color: #FFFFFF;
+		ul{
 		}
 		li{
 			font-family: 'Poppins', sans-serif;
-			font-size: 100%;
-			color: #FFFFFF;
 			list-style: none;
+		}
+
+		.fondonegro{
+			background-color: #0a0a0a;
+			text-decoration-color: #0d0d0d;
+		}
+		.fondonegro a{
+			color: #ffffff;
+		}
+		.mgtop{
+			margin-top: 50px;
 		}
 
 	</style>
 </head>
 <body>
-	<div id="contenedor">
-		<div id="arriba">
-		<div id="logoGoTrekking">
-			<nav>
-				<ul class="navLogo">
-					<li id="Logo">
-					</li>
-				</ul>
-			</nav>
+<div class="container-fluid fondonegro mt-4">
+	<div class="row">
+		<div class="col-3 fondonegro borde1">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 borde1">a</div>
+					<div class="col-6 borde1">a</div>
+				</div>
+			</div>
 		</div>
-		<div class="divarriba" id="listarriba">
-			<nav class="navlistaarriba">
-			<ul>
-				<li><a href="index.php">Inicio</a></li>
-				<li><a href="noticias.php">Noticias</a></li>
-				<li><a href="usuario_viajes.php">Ver viajes</a></li>
-				<li><a href="usuario_postulacion.php">Postularme como guia</a></li>
-			</ul>
-			</nav>
-		</div>
-		<div class="arribaSesion" id="arribaSesion">
-			<nav class="arribasesion1">
-			<ul>
+<div class="col-4 borde1 mgtop " >
+<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 sticky-top" >
+	<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
+	<li class="nav-item"><a href="noticias.php" class="nav-link">Noticias</a></li>
+	<li class="nav-item"><a href="usuario_viajes.php" class="nav-link">Ver viajes</a></li>
+	<li class="nav-item"><a href="usuario_postulacion.php" class="nav-link">Postularme como guia</a></li>
+</ul>
+</div>
+<div class="col-5 borde1">
+	<?php
+	require_once("p_isLogin.php");
+	if ($estado) {
+			?>
+			<div class="container">
+				<div class="row">
+					<div class="col-4 borde1">
+				</div>
+					<div class="col-4 borde1">
+						<ul class="navbar">
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<img class="rounded-circle" src="<?php echo $getFoto?>" width="100px" height="100px">
+							</a>
+							<div class="dropdown-menu fondonegro">
+								<a class="dropdown-item" href="usuario_perfil.php">Mi perfil</a>
+								<a class="dropdown-item" href="usuario_misviajes.php">Mis viajes</a>
+								<a class="dropdown-item" href="usuario_modificar">Modificar perfil</a>
+								<form class="form-inline" action="p_cerrarsesion.php">
+									<button type="submit" class ="btn btn-primary btn-lg">Cerrar sesion</button>
+									</form>
+							</div>
+						</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<?php
-			require_once("p_isLogin.php");
-			if ($estado) {
-			 		?>
-			 		<div id="sesion" class="sindecoracionLink">
-			 		<form action="p_cerrarsesion.php">
-						<div class="li_misesion">
-								<li><p><a href="usuario_misviajes.php">Mis viajes</a></p></li>
-								<li><p><a href="usuario_perfil.php">Mi perfil</a></p></li>
-								<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
-						</div>
-						<div class="foto_perfil">
-							<img src="<?php echo $getFoto?>" width="100%" height="100%">
-						</div>
-			 		</form>
-			 		</div>
-			 		<?php
-			 	}
-			 	else{
-			 		?>
-				<form name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
-				<li><p>Correo :</p><input class="sinborde" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL"></li>
-				<li><p>Contraseña :</p><input class="sinborde" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL"></li>
-				<li><p><input type="button" class= "bubbly-button" value="Iniciar sesion" id="btnIniciar"></p></li>
-				<li><p><input type="button" class= "bubbly-button" value= "Registrarse" onclick="irRegistrar()"></p></li>
-			</form>
-			<?php
-			 	}?>
-			</ul>
-			</nav>
-		</div>
-
-
-		</div>
-		<div class="content-all">
+		}
+		else{
+			?>
+		<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
+			<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
+					<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">
+					<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value="Iniciar sesion" id="btnIniciar"></p>
+					<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value= "Registrarse" onclick="irRegistrar()"></p>
+		</form>
+		<?php
+			}?>
+</div>
+</div>
+</div>
+		<div class="contentainer border" style="height:auto;">
 					<div class="unete1" id="unete">
 						<strong><h1>Unete a la aventura de tu vida</h1></strong>
 						<p>Inscríbete para recibir fechas de actividades
@@ -156,5 +145,8 @@
 					</div>
 		</div>
 	</div>
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.3.1.slim.min"></script>
+<script src="popper.min"></script>
 </body>
 </html>

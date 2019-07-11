@@ -176,11 +176,7 @@
 			</tr>
 		  </table>
 	";
-
 	}
-
-
-
 	echo '<a href="panel_admin.php">Volver</a>';
 }
 	mysqli_close($conexion);

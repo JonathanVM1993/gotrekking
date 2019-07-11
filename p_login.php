@@ -20,8 +20,7 @@
 </script>
 
 <?php
-	    include 'conexion.php';
-	    session_start();
+	    include 'conexion.php';	    
 	    $correo1 = $_POST['correo'];
 	    $contraseña1 = $_POST['contraseña'];
 
@@ -35,6 +34,7 @@
 			$_SESSION["administrador"] = $user;
 	    }
 	    else if(mysqli_num_rows($verificar_usuario) > 0){
+				session_start();
 				$datos_usuario = "SELECT * FROM t_usuario where correo = '$correo1'";
 				$mostrar = mysqli_query($conexion,$datos_usuario);
 				$row = mysqli_fetch_row($mostrar);

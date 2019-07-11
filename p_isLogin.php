@@ -1,13 +1,11 @@
 <?php
 
-
-    include 'conexion.php';
-
     session_start();
+    include 'conexion.php';
 
     $estado = false;
 
-    if (isset($_SESSION["usuario2"])) {
+    if (isset($_SESSION["usuario2"])) {      
     	$estado = true;
     	$getCorreo = $_SESSION["usuario2"];
       $getFoto = $_SESSION["foto"];
