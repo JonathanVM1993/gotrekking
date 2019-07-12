@@ -8,6 +8,11 @@
 
 		function cerrarSesion(){
 			alert("Sesion cerrada correctamente");
+			window.location = "index.php";
+		}
+
+		function irIndex(){
+
 		}
 	}
 </script>
@@ -23,9 +28,12 @@
 	}
 	else{
 			echo "<script>cerrarSesion()</script>";
-			session_destroy();			
+			session_destroy();
+			echo "<script>irInicio()</script>";
 	}
 	echo "Adios: ".$_SESSION["administrador"];
+	echo "<script>cerrarSesion()</script>";
 	mysqli_close($conexion);
+
 
  ?>
