@@ -1,0 +1,87 @@
+body{
+  background-image: url("../img/bienvenido.jpg");
+  background-size: cover;
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+}
+ul{
+}
+li{
+  font-family: 'Open Sans', sans-serif;
+  list-style: none;
+  color: #ffffff;
+}
+p{
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+.fondonegro{
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+.fondonegro a{
+  color: #ffffff;
+}
+a{
+  color: #ffffff;
+}
+.mgtop{
+  margin-top: 8px;
+}
+
+
+.contenedortr{
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contenedortr p{
+  text-decoration-color: #ffffff;
+}
+.containerpadre{
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.clasebotones{
+  border-radius: 5px;
+  padding: 2px;
+}
+
+
+/* usuario_viajes */
+
+.viaje1 {
+	height: 330px;
+	width: 1500px;
+	/* border: 1px solid black; */
+	margin-top: 10px;
+	margin-left: 100px;
+	float: left;
+}
+
+.viaje_descripcion {
+	height:290px;
+	width: 450px;
+	/* border: 1px solid black; */
+	margin-top: 5px;
+	margin-left: 5px;
+	float: left;
+}
+
+.imagen{
+	height: 180px;
+	width: 250px;
+	/*border: 1px solid black; */
+	float: left;
+	margin-left: 10px;
+	margin-top: 15px;
+
+}
+.content-all{
+	height: 1000px;
+	width: auto;
+	background-image: url("../img/bienvenido.jpg");
+	background-size: 100% 100%;
+}

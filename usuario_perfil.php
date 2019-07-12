@@ -8,7 +8,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb3.css">
+	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
@@ -54,7 +54,7 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid fondonegro mt-4">
+	<div class="container-fluid fondonegro">
 		<div class="row">
 			<div class="col-3 fondonegro borde1">
 				<div class="container">
@@ -87,7 +87,8 @@
 								<div class="dropdown-menu fondonegro">
 									<a class="dropdown-item" href="usuario_perfil.php">Mi perfil</a>
 									<a class="dropdown-item" href="usuario_misviajes.php">Mis viajes</a>
-									<a class="dropdown-item" href="usuario_modificar">Modificar perfil</a>
+									<a class="dropdown-item" href="modificar_usuario.php">Modificar perfil</a>
+									<a class="dropdown-item" href="usuario_modificar">Cambiar contraseña</a>
 									<form class="form-inline" action="p_cerrarsesion.php">
 										<button type="submit" class ="btn btn-primary btn-lg">Cerrar sesion</button>
 										</form>

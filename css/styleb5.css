@@ -48,3 +48,40 @@ background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   padding: 2px;
 }
+
+
+/* usuario_viajes */
+
+.viaje1 {
+	height: 330px;
+	width: 1600px;
+	/* border: 1px solid black; */
+	margin-top: 10px;
+	margin-left: 100px;
+	float: left;
+}
+
+.viaje_descripcion {
+	height:290px;
+	width: auto;
+	/* border: 1px solid black; */
+	margin-top: 5px;
+	margin-left: 5px;
+	float: left;
+}
+
+.imagen{
+	height: 180px;
+	width: 250px;
+	/*border: 1px solid black; */
+	float: left;
+	margin-left: 10px;
+	margin-top: 60px;
+  border-radius: 5px;
+}
+.content-all{
+	height: 1000px;
+	width: auto;
+	background-image: url("../img/bienvenido.jpg");
+	background-size: 100% 100%;
+}
