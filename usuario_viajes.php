@@ -148,9 +148,8 @@
 						  require_once("p_isLogin.php");
 							if ($estado) {
 								echo "<input type='button' class='clasebotones' value='Inscribirme' name ='btnR'id='btnR' onclick='irCuestionario()'>";
-							}
+							}else{echo "<p>Para inscribirte debes estar logueado</p>";}
 							echo "
-							<p>Para inscribirte debes estar logueado</p>
 							</div>
 							<div class='imagen'> <img src='$rutaimagen1' width='100%' height='100%'> </div>
 							<div class='imagen'> <img src='$rutaimagen2' width='100%' height='100%'></div>

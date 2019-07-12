@@ -1,10 +1,10 @@
 <?php
-    include 'conexion.php';
     session_start();
+    include 'conexion.php';
+
     $estado = false;
     if (isset($_SESSION["administrador"])) {
     	$estado1 = true;
-    	$getSesion = $_SESSION["usuario2"];
     }
     else{
     	echo "<script>errorSession()</script>";

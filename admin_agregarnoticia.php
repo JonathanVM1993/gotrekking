@@ -5,13 +5,14 @@
 	}
 </script>
 <?php
+		require 'isLoginAdmin.php';
     include 'conexion.php';
-    session_start();
     if (isset($_SESSION["administrador"])) {
-    	echo "Se encuentra actualmente en el panel de control de : ".$_SESSION["administrador"];
+
     }
     else{
     	echo "<script>errorSession()</script>";
+			exit;
     }
     mysqli_close($conexion);
  ?>
@@ -21,12 +22,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
-	<link rel="stylesheet" href="css/style10.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styleb6.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		$(document).ready(function() {
 			//boton registrar
@@ -58,86 +63,97 @@
 			});
 	</script>
 	<style>
-		h1{
-			font-family: 'Open+Sans', sans-serif;
-			font-size: 400%;
-			color: #FFFFFF;
-		}
-		a{
-			color: #FFFFFF;
-		}
-		li{
-			font-family: 'Open+Sans', sans-serif;
-			font-size: 100%;
-			color: #FFFFFF;
-			list-style: none;
-		}
 	</style>
 </head>
 <body>
-	<div id="contenedor">
-		<div id="arriba">
-		<div id="logoGoTrekking">
-			<nav>
-				<ul class="navLogo">
-					<li id="Logo">
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="divarriba" id="listarriba">
-			<nav class="navlistaarriba">
-			<ul>
-				<li><a href="index.php">Inicio</a></li>
-				<li><a href="">Noticias</a></li>
-				<li><a href="">Ver viajes</a></li>
+	<div class="container-fluid fondonegro">
+		<div class="row">
+			<div class="col-3 fondonegro borde1">
+				<div class="container">
 
-			</ul>
-			</nav>
+				</div>
+			</div>
+	<div class="col-4 borde1 mgtop" >
+		<ul class="navbar" style="margin-top:12px;">
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Agregar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
+				<a class="dropdown-item" href="modificar_viaje.php">Modificar viajes</a>
+				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Modificar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="usuario_perfil.php">Modificar noticias</a>
+				<a class="dropdown-item" href="usuario_misviajes.php">Modificar viajes</a>
+				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		Revisar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="admin_verguias.php">Ver guías registrados</a>
+				<a class="dropdown-item" href="admin_verviajes.php">Ver viajes</a>
+				<a class="dropdown-item" href="admin_revisarpostulacion.php">Revisar postulaciones</a>
+			</div>
+		</li>
+		</ul>
+	</div>
+	<div class="col-5 borde1" style="padding:25px;">
+		<form action="p_cerrarsesionadmin.php">
+			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
+		</form>
+	</div>
+	</div>
+	</div>
+		<div class="col-12 contentainer-fluid " style="height:900px; ">
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4 contenedortr containerpadre" style="margin-top:150px;"><div id="admin_noticia" class="admin_noticia">
+				 <form action="p_agregarnoticia.php" name="formularionoticia" id="formularionoticia" enctype="multipart/form-data" method="post">
+					 <table>
+						<tr>
+							<td><p>Título noticia:</p></td>
+							<td><input type="text" id="txtNoticia" name="txtNoticia"></td>
+						</tr>
+						<tr>
+							<td><p>Fecha:</p></td>
+							<td><input type="text" id="txtFecha" name="txtFecha"></textarea></td>
+						</tr>
+						<tr>
+							<td><p>Contenido noticia:</p></td>
+							<td><textarea name="txtContenido" id="txtContenido" cols="30" rows="10"></textarea></td>
+						</tr>
+						<tr>
+							<td><p>Agregue imagen:</p></td>
+							<td><input type="file" id="imagennoticia" name="imagennoticia"></td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Agregar noticia" name ="btnR"id="btnR" onclick="agregar_noticia()"</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Probar php" name ="btnR"id="btnR" ></td>
+						</tr>
+					 </table>
+				 </form>
+				</div></div>
+				<div class="col-4"></div>
+			</div>
 		</div>
-		<div class="arribaSesion" id="arribaSesion">
-					<form action="p_cerrarsesionadmin.php">
-			 			<p>Modo administrador</p>
-			 			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
-			 		</form>
-		</div>
-		</div>
-		<div class="content-all">
-					<div id="admin_noticia" class="admin_noticia">
-
-           <form action="p_agregarnoticia.php" name="formularionoticia" id="formularionoticia" enctype="multipart/form-data" method="post">
-             <table border="1px">
-              <tr>
-              	<td><p>Título noticia:</p></td>
-              	<td><input type="text" id="txtNoticia" name="txtNoticia"></td>
-              </tr>
-							<tr>
-              	<td><p>Fecha:</p></td>
-              	<td><input type="text" id="txtFecha" name="txtFecha"></textarea></td>
-              </tr>
-              <tr>
-              	<td><p>Contenido noticia:</p></td>
-              	<td><textarea name="txtContenido" id="txtContenido" cols="30" rows="10"></textarea></td>
-              </tr>
-              <tr>
-              	<td><p>Agregue imagen:</p></td>
-              	<td><input type="file" id="imagennoticia" name="imagennoticia"></td>
-              </tr>
-							<tr>
-								<td><input type="button" value="Agregar noticia" name ="btnR"id="btnR" onclick="agregar_noticia()"</td>
-							</tr>
-							<tr>
-								<td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
-							</tr>
-							<tr>
-								<td><input type="submit" value="Probar php" name ="btnR"id="btnR" ></td>
-							</tr>
-             </table>
-           </form>
-					</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-		</div>
+
 	</div>
 </body>
 </html>

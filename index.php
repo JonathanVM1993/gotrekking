@@ -103,7 +103,7 @@
 			}
 			else{
 				?>
-				<div class="col-12 borde1" style="margin-top:38px;">
+				<div class="col-12 borde1" style="margin-top:35px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
 				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
 						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">

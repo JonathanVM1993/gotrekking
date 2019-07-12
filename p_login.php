@@ -20,7 +20,7 @@
 </script>
 
 <?php
-	    include 'conexion.php';	    
+	    include 'conexion.php';
 	    $correo1 = $_POST['correo'];
 	    $contraseña1 = $_POST['contraseña'];
 
@@ -29,6 +29,7 @@
 			$verificar_guia = mysqli_query($conexion, "SELECT user_guia and password FROM t_guia_trekking WHERE user_guia ='$correo1' AND password = '$contraseña1'");
 
 	    if(mysqli_num_rows($verificar_admin) > 0){
+				session_start();
 	    	$user = "administrador";
 	    	echo "<script>exitoAdmin()</script>";
 			$_SESSION["administrador"] = $user;

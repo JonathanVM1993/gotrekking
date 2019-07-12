@@ -1,6 +1,8 @@
 body{
   background-image: url("../img/bienvenido.jpg");
   background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
 }
 h1{
   font-family: 'Open Sans', sans-serif;
@@ -48,13 +50,18 @@ background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   padding: 2px;
 }
+.contsep{
+  margin-top: 50px;
+  padding: 25;
+}
+
 
 
 /* usuario_viajes */
 
 .viaje1 {
 	height: 330px;
-	width: 1500px;
+	width: 1600px;
 	/* border: 1px solid black; */
 	margin-top: 10px;
 	margin-left: 100px;
@@ -63,7 +70,7 @@ background-color: rgba(0, 0, 0, 0.6);
 
 .viaje_descripcion {
 	height:290px;
-	width: 450px;
+	width: auto;
 	/* border: 1px solid black; */
 	margin-top: 5px;
 	margin-left: 5px;
@@ -76,8 +83,8 @@ background-color: rgba(0, 0, 0, 0.6);
 	/*border: 1px solid black; */
 	float: left;
 	margin-left: 10px;
-	margin-top: 15px;
-
+	margin-top: 60px;
+  border-radius: 5px;
 }
 .content-all{
 	height: 1000px;

@@ -1,9 +1,11 @@
 <?php
-session_start();
-require('isLoginGuia.php');
+
+
+
+require('p_isLogin.php');
 include ("conexion.php");
 $id_guia = $_SESSION["usuarioguia"];
 
-echo "$id_guia";
+echo "$getCorreo";
 
  ?>

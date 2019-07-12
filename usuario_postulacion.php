@@ -116,7 +116,7 @@
 	</div>
 	</div>
 	</div>
-	<div class="col-12 contentainer-fluid" style="height:700px; border-radius: 5px;">
+	<div class="col-12 contentainer-fluid" style="height:700px;">
 <div class="row">
 	<div class="col-4 "></div>
 	<div class="col-4 contenedortr containerpadre" style="margin-top:100px;"><div class="postulacion" id="postulacion">

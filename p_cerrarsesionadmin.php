@@ -23,8 +23,7 @@
 	}
 	else{
 			echo "<script>cerrarSesion()</script>";
-			session_destroy();
-			echo "<script>irInicio()</script>";
+			session_destroy();			
 	}
 	echo "Adios: ".$_SESSION["administrador"];
 	mysqli_close($conexion);

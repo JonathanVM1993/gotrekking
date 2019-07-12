@@ -4,34 +4,34 @@
 		window.location = "index.php";
 	}
 </script>
-
 <?php
-
+		require 'isLoginAdmin.php';
     include 'conexion.php';
-
-    session_start();
-
     if (isset($_SESSION["administrador"])) {
-    	echo "Se encuentra actualmente en el panel de control de : ".$_SESSION["administrador"];
+
     }
     else{
     	echo "<script>errorSession()</script>";
+			exit;
     }
     mysqli_close($conexion);
  ?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="css/style10.css">
-	<link rel="stylesheet" href="css/boton.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styleb6.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		$(document).ready(function() {
 			//boton registrar
@@ -39,7 +39,6 @@
 				var parametros = {
 					correo: $("#txtCorreoL").val(),
 					contraseña: $("#txtContraseñaL").val()
-
 				};
 				$.ajax({
 				url: 'p_login.php',
@@ -63,100 +62,106 @@
 			// boton registrar
 			});
 	</script>
-
-
-
-
 	<style>
-		h1{
-			font-family: 'Poppins', sans-serif;
-			font-size: 400%;
-			color: #FFFFFF;
-		}
-
-		a{
-			color: #FFFFFF;
-		}
-		li{
-			font-family: 'Poppins', sans-serif;
-			font-size: 100%;
-			color: #FFFFFF;
-			list-style: none;
-		}
-
 	</style>
 </head>
 <body>
-	<div id="contenedor">
-		<div id="arriba">
-		<div id="logoGoTrekking">
-			<nav>
-				<ul class="navLogo">
-					<li id="Logo">
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="divarriba" id="listarriba">
-			<nav class="navlistaarriba">
-			<ul>
-				<li><a href="index.php">Inicio</a></li>
-				<li><a href="">Noticias</a></li>
-				<li><a href="">Ver viajes</a></li>
+	<div class="container-fluid fondonegro">
+		<div class="row">
+			<div class="col-3 fondonegro borde1">
+				<div class="container">
 
-			</ul>
-			</nav>
-		</div>
-		<div class="arribaSesion" id="arribaSesion">
-					<form action="p_cerrarsesionadmin.php">
-			 			<p>Modo administrador</p>
-			 			<button type="submit" class= "bubbly-button">Cerrar sesion</button>
-			 		</form>
-		</div>
-
-
-		</div>
-		<div class="content-all">
+				</div>
+			</div>
+	<div class="col-4 borde1 mgtop" >
+		<ul class="navbar" style="margin-top:12px;">
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Agregar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="admin_agregarguia.php">Agregar guía</a>
+				<a class="dropdown-item" href="admin_agregarviaje.php">Agregar viaje</a>
+				<a class="dropdown-item" href="admin_agregarnotica.php">Agregar noticias</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Modificar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
+				<a class="dropdown-item" href="modificar_viaje.php">Modificar viajes</a>
+				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		Revisar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a class="dropdown-item" href="admin_verguias.php">Ver guías registrados</a>
+				<a class="dropdown-item" href="admin_verviajes.php">Ver viajes</a>
+				<a class="dropdown-item" href="admin_revisarpostulacion.php">Revisar postulaciones</a>
+			</div>
+		</li>
+		</ul>
+	</div>
+	<div class="col-5 borde1" style="padding:25px;">
+		<form action="p_cerrarsesionadmin.php">
+			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
+		</form>
+	</div>
+	</div>
+	</div>
+		<div class="col-12 contentainer-fluid " style="height:900px; ">
+			<div class="row">
+				<div class="col-4 "></div>
+				<div class="col-4 contenedortr containerpadre" style="margin-top:150px;">
 					<div id="admin_menu" class="admin_menu">
-						<h1>Registrar guía</h1>
-						<form name="formularioguia" id="formularioguia" enctype="multipart/form-data" method="post">
-							<table class="tablaregistrar">
-								<tr>
-									<td><p>Nombre guía:</p></td>
-									<td><input class="sinborde"	id="txtNombre" name="txtNombre" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Apellido parterno guía:</p></td>
-									<td><input class="sinborde"	id="txtApellidoP" name="txtApellidoP" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Apellido materno guía:</p></td>
-									<td><input class="sinborde"	id="txtApellidoM" name="txtApellidoM" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Rut:</p></td>
-									<td><input class="sinborde"	id="txtRut" name="txtRut" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Teléfono:</p></td>
-									<td><input class="sinborde"	id="txtTelefono" name="txtTelefono" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Correo:</p></td>
-									<td><input class="sinborde"	id="txtCorreo" name="txtCorreo" type="text"></td>
-								</tr>
-								<tr>
-									<td><p>Password:</p></td>
-									<td><input class="sinborde"	id="txtPassword" name="txtPassword" type="text"></td>
-								</tr>
-								<tr>
-							<td><input type="button" class= "bubbly-button" value="Registrar" name ="btnR"id="btnR" onclick="registrar_guia()"></td>
-								</tr>
-								<td><input type="button" class= "bubbly-button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
-							</table>
-						</form>
+					<h1>Registrar guía</h1>
+					<form name="formularioguia" id="formularioguia" enctype="multipart/form-data" method="post">
+						<table class="tablaregistrar">
+							<tr>
+								<td><p>Nombre guía:</p></td>
+								<td><input class="sinborde"	id="txtNombre" name="txtNombre" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Apellido parterno guía:</p></td>
+								<td><input class="sinborde"	id="txtApellidoP" name="txtApellidoP" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Apellido materno guía:</p></td>
+								<td><input class="sinborde"	id="txtApellidoM" name="txtApellidoM" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Rut:</p></td>
+								<td><input class="sinborde"	id="txtRut" name="txtRut" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Teléfono:</p></td>
+								<td><input class="sinborde"	id="txtTelefono" name="txtTelefono" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Correo:</p></td>
+								<td><input class="sinborde"	id="txtCorreo" name="txtCorreo" type="text"></td>
+							</tr>
+							<tr>
+								<td><p>Password:</p></td>
+								<td><input class="sinborde"	id="txtPassword" name="txtPassword" type="text"></td>
+							</tr>
+							<tr>
+						<td><input type="button" class= "bubbly-button" value="Registrar" name ="btnR"id="btnR" onclick="registrar_guia()"></td>
+							</tr>
+							<td><input type="button" class= "bubbly-button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
+						</table>
+					</form>
 
-					</div>
+				</div></div>
+				<div class="col-4"></div>
+			</div>
+		</div>
+
 		</div>
 				<div class="cargando1" id="cargando1" style='display: none'>
 				</div>
