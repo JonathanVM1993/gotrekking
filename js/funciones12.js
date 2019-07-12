@@ -181,7 +181,6 @@ function modificar_usuario(){
 }
 function mostrarNoticia(){
 	var parametros = new FormData($("#formmodificarn")[0]);
-	alert("Llega");
 	$.ajax({
 		url: "mostrar_noticia_mod.php",
 		type: "post",
@@ -196,8 +195,8 @@ function mostrarNoticia(){
 		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
 		},
 		success: function(parametroRetorno){
-			$("#cargando1").html(parametroRetorno);
-      alert("Modificado correctamente");
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);      
 		}
 	});
 }

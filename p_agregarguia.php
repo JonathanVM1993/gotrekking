@@ -28,8 +28,9 @@
 		$telefono = $_POST['txtTelefono'];
 		$correo = $_POST['txtCorreo'];
 		$password = $_POST['txtPassword'];
+		$userg = $_POST['txtUserG'];
 
-		$insertar = "INSERT INTO t_guia_trekking(nom_guia,ap_p_guia,ap_m_guia,rut,telefono,correo,password) VALUES ('$nombre','$apellidopaterno','$apellidomaterno','$rut','$telefono','$correo','$password')";
+		$insertar = "INSERT INTO t_guia_trekking(nom_guia,ap_p_guia,ap_m_guia,rut,telefono,correo,password,user_guia) VALUES ('$nombre','$apellidopaterno','$apellidomaterno','$rut','$telefono','$correo','$password','$userg')";
 
 		$verificar_guia = mysqli_query($conexion,"SELECT * FROM t_guia_trekking WHERE correo = '$correo'");
 

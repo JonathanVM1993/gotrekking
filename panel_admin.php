@@ -82,7 +82,7 @@
 			<div class="dropdown-menu fondonegro">
 				<a class="dropdown-item" href="admin_agregarguia.php">Agregar guía</a>
 				<a class="dropdown-item" href="admin_agregarviaje.php">Agregar viaje</a>
-				<a class="dropdown-item" href="admin_agregarnotica.php">Agregar noticias</a>
+				<a class="dropdown-item" href="admin_agregarnoticia.php">Agregar noticias</a>
 			</div>
 		</li>
 		<li class="nav-item dropdown">

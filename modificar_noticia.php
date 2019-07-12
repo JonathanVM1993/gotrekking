@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones12.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -82,7 +82,7 @@
 			<div class="dropdown-menu fondonegro">
 				<a class="dropdown-item" href="admin_agregarguia.php">Agregar guía</a>
 				<a class="dropdown-item" href="admin_agregarviaje.php">Agregar viaje</a>
-				<a class="dropdown-item" href="admin_agregarnotica.php">Agregar noticias</a>
+				<a class="dropdown-item" href="admin_agregarnoticia.php">Agregar noticias</a>
 			</div>
 		</li>
 		<li class="nav-item dropdown">
@@ -113,6 +113,31 @@
 		</form>
 	</div>
 	</div>
+	</div>
+	<div class="col-12 contentainer-fluid " style="height:900px; ">
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
+				<h1>Elija una noticia para modificar</h1>
+				<form name="formmodificarn" id="formmodificarn" enctype="multipart/form-data" method="post">
+				<select name="id_noticia1" id="id_noticia1">
+				<option value="$row1[0]" selected>Seleccione Noticia</option>
+				<?php
+					include 'conexion.php';
+					$query = "SELECT * FROM t_noticia;";
+					$ejecutar = mysqli_query($conexion, $query);
+					while($row1=mysqli_fetch_array($ejecutar)){?>
+						<option value="<?php echo "$row1[0]";?>"><?php echo "$row1[1]"?></option>
+					<?php }
+				 ?>
+				</select>
+				<input type="button" onclick="mostrarNoticia()" value="Mostrar">				
+				</form>
+				<div class="cargando1" id="cargando1">
+				</div>
+			</div>
+			<div class="col-4"></div>
+		</div>
 	</div>
 </body>
 </html>

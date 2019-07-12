@@ -151,6 +151,10 @@
 								<td><input class="sinborde"	id="txtPassword" name="txtPassword" type="text"></td>
 							</tr>
 							<tr>
+								<td><p>Usuario del guía:</p></td>
+								<td><input class="sinborde"	id="txtUserG" name="txtUserG" type="text"></td>
+							</tr>
+							<tr>
 						<td><input type="button" class= "bubbly-button" value="Registrar" name ="btnR"id="btnR" onclick="registrar_guia()"></td>
 							</tr>
 							<td><input type="button" class= "bubbly-button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>

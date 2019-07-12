@@ -141,10 +141,7 @@
 						</tr>
 						<tr>
 							<td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
-						</tr>
-						<tr>
-							<td><input type="submit" value="Probar php" name ="btnR"id="btnR" ></td>
-						</tr>
+						</tr>						
 					 </table>
 				 </form>
 				</div></div>
