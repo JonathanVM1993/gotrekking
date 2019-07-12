@@ -52,6 +52,7 @@
 	    	$_SESSION["usuario2"] = $user2;
 	    }
 		else if(mysqli_num_rows($verificar_guia) > 0){
+			session_start();
 			$datos_guia = "SELECT * FROM t_guia_trekking where user_guia ='$correo1'";
 			$buscar = mysqli_query($conexion, $datos_guia);
 			$row1 = mysqli_fetch_row($buscar);

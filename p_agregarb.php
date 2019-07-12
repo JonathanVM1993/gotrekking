@@ -17,12 +17,11 @@ function volver(){
 </script>
 
 <?php
-session_start();
 require('isLoginGuia.php');
 include "conexion.php";
 
-$id_viaje = $_POST['id_viaje'];
 $des_b = $_POST['d_bit'];
+$titulo = $_POST['txtTitulo'];
 
 $id_guia = $getIdGuia;
 
@@ -30,7 +29,7 @@ date_default_timezone_set("America/Santiago");
 $fecha = date("20y-m-d");
 
 
-$query = "INSERT INTO bitacora_viajero(id_guia_viajero,id_guia_viaje,descripcion_viaje,fecha_ingreso) VALUES('$id_guia','$id_viaje','$des_b','$fecha')";
+$query = "INSERT INTO bitacora_viajero(id_guia_viajero,descripcion_viaje,fecha_ingreso,titulo_historia) VALUES('$id_guia','$des_b','$fecha','$titulo')";
 $ejecutar = mysqli_query($conexion, $query);
 
 if (!$ejecutar) {

@@ -3,6 +3,10 @@
 		alert("Usted no tiene permiso");
 		window.location = "index.php";
 	}
+
+	function eliminarcorrecto(){
+		alert("Viaje eliminado correctamente");
+	}
 </script>
 <?php
 		require 'isLoginAdmin.php';
@@ -125,7 +129,7 @@
 				if (isset($_POST['eliminar'])){
 					$id_viaje = $_POST['id'];
 					$eliminar = "DELETE FROM t_viaje where id_viaje = '".$id_viaje."' ";
-					$query = "SELECT * from t_viaje";
+					$query = "SELECT * from t_viaje";				
 
 					$eliminarcuestionario = "DELETE FROM cuestionario where viaje_cuestionario = '$id_viaje'";
 					$ejecutar = mysqli_query($conexion, $eliminarcuestionario);
@@ -139,7 +143,7 @@
 							echo "<script>errorEliminar()</script>";
 							header('location:admin_verviajes.php');
 						}
-							echo "Guía eliminado correctamente";
+							echo "<script>eliminarcorrecto()</script>";
 							header('location:admin_verviajes.php');
 
 				}else{

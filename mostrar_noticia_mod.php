@@ -13,4 +13,4 @@ $ejecutar = mysqli_query($conexion, $query);
 echo "Hola";
 
 
- ?>
+?>

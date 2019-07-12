@@ -1,7 +1,7 @@
 <?php
     include 'conexion.php';
 
-
+    session_start();
     $estado = false;
 
     if (isset($_SESSION["usuarioguia"])) {

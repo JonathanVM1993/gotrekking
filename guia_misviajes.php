@@ -1,16 +1,12 @@
 <script>
 	function errorSession(){
-		alert("Usted no tiene permiso jeje");
+		alert("Usted no tiene permiso de guía");
 		window.location = "index.php";
 	}
-  function correctoFinalizar(){
-  alert("Viaje finalizado con exito");
-}
-
 </script>
 <?php
+    require 'isLoginGuia.php';
     include 'conexion.php';
-    session_start();
     if (isset($_SESSION["usuarioguia"])) {
     }
     else{
@@ -24,13 +20,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
-	<link rel="stylesheet" href="css/style13.css">
-	<link rel="stylesheet" href="css/boton.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styleb6.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones10.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		$(document).ready(function() {
 			//boton registrar
@@ -62,129 +61,125 @@
 			});
 	</script>
 	<style>
-		h1{
-			font-family: 'Open+Sans', sans-serif;
-			font-size: 200%;
-			color: #FFFFFF;
-		}
-		a{
-			color: #FFFFFF;
-		}
-		li{
-			font-family: 'Open+Sans', sans-serif;
-			font-size: 100%;
-			color: #FFFFFF;
-			list-style: none;
-		}
-    p{
-      font-family: 'Open+Sans', sans-serif;
-			font-size: 100%;
-			color: #FFFFFF;
-			list-style: none;
-    }
 	</style>
 </head>
 <body>
-	<div id="contenedor">
-		<div id="arriba">
-		<div id="logoGoTrekking">
-			<nav>
-				<ul class="navLogo">
-					<li id="Logo">
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="divarribaGuia" id="listarribaGuia">
-			<nav class="navlistaarriba">
-			<ul>
-				<li><a href="guia_misviajes.php">Mis viajes</a></li>
-				<li><a href="guia_escribirbitacora.php">Escribir en Bitacora</a></li>
-				<li><a href="guia_mibitacora.php">Mi bitacora</a></li>
-        <li><a href="guia_modificar.php">Modificar perfil</a></li>
-			</ul>
-			</nav>
-		</div>
-		<div class="sesion" id="arribaSesionGuia">
-					<form action="p_cerrarsesionguia.php">
-			 			<button type="submit" class= "bubbly-button" admin>Cerrar sesion</button>
-			 		</form>
-		</div>
-		</div>
-		<div class="content-all">
-					<div id="guia_misviajes" class="guia_misviajes">
-            <h1>Próximos viajes por realizar</h1>
-            <?php
-              require("isLoginGuia.php");
-              include "conexion.php";
-              if (isset($_POST['eliminar'])){
-            		$id_viaje = $_POST['id'];
-            		$eliminar = "DELETE FROM t_viaje where id_viaje = '".$id_viaje."' ";
-            		$query = "SELECT * from t_viaje";
+	<div class="container-fluid fondonegro">
+		<div class="row">
+			<div class="col-3 fondonegro borde1">
+				<div class="container">
 
-                $eliminarcuestionario = "DELETE FROM cuestionario where viaje_cuestionario = '$id_viaje'";
-                $ejecutar = mysqli_query($conexion, $eliminarcuestionario);
+				</div>
+			</div>
+	<div class="col-4 borde1 mgtop" >
+		<ul class="navbar" style="margin-top:12px;">
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Mis viajes
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a href="guia_misviajes.php">Próximos viajes</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			Bitácora
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a href="guia_escribirbitacora.php">Escribir en bitácora</a>
+				<a href="guia_mibitacora.php">Mi bitácora</a>
+			</div>
+		</li>
+		<li class="nav-item dropdown">
+			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		Modificar
+			</a>
+			<div class="dropdown-menu fondonegro">
+				<a href="guia_modificar.php">Modificar perfil</a>
+				<a href="guia_modificar_p.php">Modificar contraseña</a>
+			</div>
+		</li>
+		</ul>
+	</div>
+	<div class="col-5 borde1" style="padding:25px;">
+		<form action="p_cerrarsesionguia.php">
+			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
+		</form>
+	</div>
+	</div>
+	</div>
+	<div class="col-12 contentainer-fluid " style="height:900px; ">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6 containerpadre contenedortr" style="margin-top:50px;">
+				<div id="guia_misviajes" class="guia_misviajes">
+					<h1>Próximos viajes por realizar</h1>
 
-                $eliminarusuariodelviaje = "DELETE FROM usuarios_viaje where n_viaje ='$id_viaje'";
-                $ejecutareliminarviaje = mysqli_query($conexion, $eliminarusuariodelviaje);
+					<?php
+						require_once("isLoginGuia.php");
+						include "conexion.php";
+						if (isset($_POST['eliminar'])){
+							$id_viaje = $_POST['id'];
+							$estadoC = "En curso";
 
-            		error_reporting(E_ERROR | E_PARSE);
-            			$ejecutar = mysqli_query($conexion,$eliminar);
-            			if (!$ejecutar) {
-            				echo "<script>errorEliminar()</script>";
+							$id_viaje = $_POST['id'];
+							$eliminar = "DELETE FROM t_viaje where id_viaje = '".$id_viaje."' ";
+							$query = "SELECT * from t_viaje";
 
-            			}
-                    $getCantidad = $getCantidad+1;
-                    $insertarcantidad = "UPDATE t_guia_trekking SET viajes_realizados='$getCantidad' WHERE id_guia='$getIdGuia'";
-                    $ejecutar = mysqli_query($conexion, $insertarcantidad);
-            				echo "<script>correctoFinalizar()</script>";
-            				header('location:guia_misviajes.php');
-            	}
-            else{
-              $query = "SELECT nombre_viaje,fecha_viaje,ubicacion,hora_reunion,id_viaje FROM t_viaje WHERE id_guia ='$getIdGuia'";
-              $ejecutar = mysqli_query($conexion, $query);
-              echo "
-                <table class='tabla_pagados'>
-              <tr>
-                <td><p>Finalizar viaje</p></td>
-                <td><p>Inscritos</p></td>
-                <td><p></p></td>
-                <td><p>Nombre viaje</p></td>
-                <td><p>Fecha viaje</p></td>
-                <td><p>Ubicacion</p></td>
-                <td><p>Hora reunion</p></td>
-              </tr>
-              </table>
-              ";
-              while ($row=mysqli_fetch_row($ejecutar)) {
-                echo "
-                <table class='tabla_pagados'>
-                <tr>
-                <td>
-                <form method='POST'>
-                  <input type='hidden' name='id' value='$row[4]''>
-                  <input type='submit' name='eliminar' value='Finalizar'>
-                </form>
-                <td>
-                  <form action='p_verlistainscritos.php' method='POST'>
-                  <input type='hidden' name='viaje_id' value='$row[4]'/>
-                  <input type='submit' value='Inscritos'/>
-                  </form>
-                </td>
-                <td>
-                  <td><p>$row[0]</p></td>
-                  <td><p>$row[1]</p></td>
-                  <td><p>$row[2]</p></td>
-                  <td><p>$row[3]</p></td>
-                </tr>
-                </table>";
-                }
-                }
-             ?>
-             <button onclick="volverGuiaPerfil()">Volver</button>
-					</div>
+							$eliminarcuestionario = "DELETE FROM cuestionario where viaje_cuestionario = '$id_viaje'";
+							$ejecutar = mysqli_query($conexion, $eliminarcuestionario);
 
+							$eliminarusuariodelviaje = "DELETE FROM usuarios_viaje where n_viaje ='$id_viaje'";
+							$ejecutareliminarviaje = mysqli_query($conexion, $eliminarusuariodelviaje);
+
+							error_reporting(E_ERROR | E_PARSE);
+								$ejecutar = mysqli_query($conexion,$eliminar);
+								if (!$ejecutar) {
+									echo "<script>errorEliminar()</script>";
+									header('location:guia_misviajes.php.php');
+								}
+									echo "<script>eliminarcorrecto()</script>";
+									header('location:guia_misviajes.php.php');
+
+
+
+
+						}
+					else{
+						$query = "SELECT nombre_viaje,fecha_viaje,ubicacion,hora_reunion,id_viaje FROM t_viaje WHERE id_guia ='$getIdGuia'";
+						$ejecutar = mysqli_query($conexion, $query);
+						while ($row=mysqli_fetch_row($ejecutar)) {
+							echo "
+							<table class='tabla_pagados'>
+							<tr>
+							<td>
+							<form method='POST'>
+								<input type='hidden' name='id' value='$row[4]''>
+								<input type='submit' name='eliminar' value='Finalizar'>
+							</form>
+							<td>
+								<form action='p_verlistainscritos.php' method='POST'>
+								<input type='hidden' name='viaje_id' value='$row[4]'/>
+								<input type='submit' value='Inscritos'/>
+								</form>
+							</td>
+							<td>
+								<td><p>Nombre: $row[0]</p></td>
+								<td><p>Fecha: $row[1]</p></td>
+								<td><p>$row[2]</p></td>
+								<td>Hora reunión: <p>$row[3]</p></td>
+							</tr>
+							</table>";
+							}
+							}
+					 ?>
+					 <button onclick="volverGuiaPerfil()">Volver</button>
+				</div>
+			</div>
+			<div class="col-3"></div>
 		</div>
+	</div>
+
 	</div>
 </body>
 </html>
