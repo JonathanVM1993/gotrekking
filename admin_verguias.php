@@ -3,6 +3,10 @@
 		alert("Usted no tiene permiso");
 		window.location = "index.php";
 	}
+
+	function guiaenviaje(){
+		alert("No puede borrar al guia, debe modificar el viaje primero o eliminarlo");
+	}
 </script>
 <?php
 		require 'isLoginAdmin.php';
@@ -124,8 +128,16 @@
 
 				if (isset($_POST['eliminar'])){
 					$id_guia = $_POST['id'];
+
 					$eliminar = "DELETE FROM t_guia_trekking where id_guia = '".$id_guia."' ";
 					$query = "SELECT * from t_guia_trekking";
+
+					$buscarguiaen = "SELECT id_guia FROM t_viaje WHERE id_guia = '$id_guia'";
+					$confirmar = mysqli_query($conexion, $buscarguiaen);
+
+					if (mysqli_fetch_row($confirmar)>0) {
+						echo "<script>guiaenviaje()</script>";
+					}
 
 					error_reporting(E_ERROR | E_PARSE);
 						$ejecutar = mysqli_query($conexion,$eliminar);

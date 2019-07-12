@@ -163,6 +163,18 @@
 			    				<td><p>Imagen Google Maps:</p></td>
 			    				<td><input class="sinborde" type="file" name="img4"  id="img4"></td>
 			    			</tr>
+								<tr>
+			    				<td><p>Imagen 5:</p></td>
+			    				<td><input class="sinborde" type="file" name="img5"  id="img5"></td>
+			    			</tr>
+								<tr>
+			    				<td><p>Imagen 6:</p></td>
+			    				<td><input class="sinborde" type="file" name="img6"  id="img6"></td>
+			    			</tr>
+								<tr>
+			    				<td><p>Imagen 7:</p></td>
+			    				<td><input class="sinborde" type="file" name="img7"  id="img7"></td>
+			    			</tr>
 			    			<tr>
 			    				<td><p>Descripcion viaje:</p></td>
 			    				<td><textarea name="txtDescripcion" id="txtDescripcion"  cols="30" rows="10"></textarea>

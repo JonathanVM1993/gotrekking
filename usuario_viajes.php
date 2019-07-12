@@ -122,6 +122,7 @@
 						$mostrar = mysqli_query($conexion, $query);
 
 						while ($row=mysqli_fetch_array($mostrar)) {
+							$id_viaje = $row[0];
 							$nombreviaje = $row[1];
 							$fecha = $row[2];
 							$descripcion = $row[8];
@@ -137,13 +138,17 @@
 							$resultado = mysqli_fetch_array($buscar_nivel);
 							$nivel = $resultado[0];
 
-							echo "<div class='viaje1 contenedortr' style='border-radius:20px; '>
+							echo "<div class='viaje1 contenedortr ' style='border-radius:20px; height:auto; '>
 							<div class='viaje_descripcion' style='padding:25px;'><p>Nombre viaje: $nombreviaje</p>
 							<p>Fecha: $fecha</p>
 							<p>Ubicacion: $ubicacion</p>
 							<p>Descripcion: $descripcion</p>
 							<p>Nivel viaje: $nivel</p>
 							<p>Precio viaje: $precio_viaje</p>
+							<form method='POST' action='viaje_mostrar.php'>
+								<input type='hidden' name='txtIdViaje' id='txtIdViaje' value='$id_viaje'>
+								<input type='submit' name='eliminar' value='Ver viaje'>
+							</form>
               ";
 						  require_once("p_isLogin.php");
 							if ($estado) {
@@ -155,12 +160,12 @@
 							<div class='imagen'> <img src='$rutaimagen2' width='100%' height='100%'></div>
 							<div class='imagen'> <img src='$rutaimagen3' width='100%' height='100%'></div>
 							<div class='imagen'> <img src='$rutaimagen4' width='100%' height='100%'></div>
+
 						</div>";
 						}
 					 ?>
 					</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
-
 					</div>
 		</div>
 	</div>

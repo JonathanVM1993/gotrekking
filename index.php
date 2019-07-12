@@ -116,18 +116,22 @@
 	</div>
 	</div>
 	</div>
-		<div class="contentainer border contenedortr" style="height:auto;">
-					<div class="unete1" id="unete">
-						<strong><h1>Unete a la aventura de tu vida</h1></strong>
-						<p>Inscríbete para recibir fechas de actividades
-						noticias, consejos, datos de salidas, talleres de Gotrekking.
-						No te puedes perder el comienzo de esta aventura, solo debes
-						registrarte para comenzar!
-						</p>
-						<br>
-						<p>Si deseas registrarte y obtener más información haz click <a href="registrarse.html">>>aquí<<</a></p>
-					</div>
-					</div>
+	<div class="col-12 contentainer-fluid border" style="height:900px;">
+		<div class="row">
+			<div class="col-1 "></div>
+			<div class="col-6 containerpadre contenedortr border" style="margin-top:150px; height:400px;">
+				<strong><h1>Unete a la aventura de tu vida</h1></strong>
+				<p>Inscríbete para recibir fechas de actividades
+				noticias, consejos, datos de salidas,<br> talleres de Gotrekking.
+				No te puedes perder el comienzo de esta aventura, solo <br>debes
+				registrarte para comenzar!
+				</p>
+				<br>
+				<p>Si deseas registrarte y obtener más información haz click <a href="registrarse.html">>>aquí<<</a></p>
+			</div>
+			<div class="col-5 "></div>
+		</div>
+	</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
 		</div>

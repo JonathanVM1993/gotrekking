@@ -103,7 +103,7 @@
 			}
 			else{
 				?>
-				<div class="col-12 borde1" style="margin-top:38px;">
+				<div class="col-12 borde1" style="margin-top:35px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
 				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
 						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">
@@ -118,39 +118,40 @@
 	</div>
 	<div class="col-12 contentainer-fluid border" style="height:900px;">
 		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-10 containerpadre contenedortr" style="margin-top:50px;">
-				<?php
-				include 'conexion.php';
-				$query = "SELECT * FROM t_noticia";
-				$mostrar = mysqli_query($conexion, $query);
-				echo "<div class='seccion_noticia'>";
-				while ($row=mysqli_fetch_array($mostrar)) {
-					$titulo = $row[1];
-					$contenido = $row[3];
-					$ruta = $row[4];
-					echo "
-												<div class='noticia'>
-													<h1>$titulo</h>
-													<br/>
-													<p>$contenido</p>
-													<img src='$ruta' width='200px' height='200px'>
-												</div>
-			               ";
-				}
-				echo "</div>";
-				?>
+			<div class="col-1 "></div>
+			<div class="col-8 containerpadre contenedortr border" style="margin-top:50px; height:700px;">
+
+        <?php
+        include "conexion.php";
+
+        $idviaje = $_POST['txtIdViaje'];
+
+        $query = "SELECT * FROM t_viaje WHERE id_viaje ='8'";
+        $mostrar = mysqli_query($conexion, $query);
+
+        $row3 = mysqli_fetch_array($mostrar);
+
+        echo "<h1>$row3[1]</h1>";
+        echo "<br/>";
+        echo "<p>$row3[8]</p>";
+        echo "<img src='$row3[7]'  height='200px' width='300px'/>";
+        echo "<br/>";
+        echo "<br/>";
+        echo "<img src='$row3[6]'  height='200px' width='300px' />";
+
+
+         ?>
+
 			</div>
-			<div class="col-1"></div>
+			<div class="col-3 "></div>
 		</div>
 	</div>
-
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-
-
-	<script src="js/bootstrap.min.js"></script>
-	<script src="jquery-3.3.1.slim.min"></script>
-	<script src="popper.min"></script>
+		</div>
+	</div>
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.3.1.slim.min"></script>
+<script src="popper.min"></script>
 </body>
 </html>
