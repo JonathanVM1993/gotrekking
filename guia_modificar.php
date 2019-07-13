@@ -141,10 +141,11 @@
           </tr>
           <tr>
             <td><input type="button" onclick="modificarPerfilG()" value="Modificar"></td>
-            <td><input type="submit" value="Probar"></td>
+						<td></td>
           </tr>
           </table>
           </form>
+					<button onclick="volverGuiaPerfil()">Volver</button>
         </div>
         <div class="col-4"></div>
       </div>

@@ -90,8 +90,7 @@
 			Modificar
 			</a>
 			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
-				<a class="dropdown-item" href="modificar_viaje.php">Modificar viajes</a>
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>				
 				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
 			</div>
 		</li>

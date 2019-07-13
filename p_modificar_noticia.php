@@ -9,7 +9,7 @@
   }
 
   function exito(){
-    alert("Noticia agregada correctamente");
+    alert("Noticia modificada correctamente");
   }
 
 </script>
@@ -25,24 +25,27 @@
     $imagen = $_FILES['imagennoticia'];
     $prueba = "hola";
 
-    echo "$titulo";
-    echo "$fecha";
-    echo "$contenido";
-    echo "$idnot";
-
     $nombreArchivo1 = $_FILES['imagennoticia']['tmp_name'];
-
-    echo "$nombreArchivo1";
 
     $nom_random = rand(1, 10000);
     $ruta1= "fotosnoticia/".$nom_random.".jpg";
     move_uploaded_file($imagen["tmp_name"], $ruta1);
 
-    $insertar = "UPDATE t_noticia SET titulo_noticia='$titulo', fecha_noticia='$fecha', contenido_noticia='$contenido'
+    echo "$titulo";
+    echo "<br />";
+    echo "$fecha";
+    echo "<br />";
+    echo "$contenido";
+    echo "<br />";
+    echo "$ruta1";
+    echo "<br />";
+    echo "$idnot";
+
+    $insertar = "UPDATE t_noticia SET titulo_noticia='$titulo', fecha_noticia='$fecha', contenido_noticia='$contenido',
     imagen_noticia='$ruta1' WHERE id_noticia='$idnot'";
     $resultado = mysqli_query($conexion,$insertar);
 
-    if (!$insertar) {
+    if (!$resultado) {
       echo "<script>errorIngreso()</script>";
     }
     else{

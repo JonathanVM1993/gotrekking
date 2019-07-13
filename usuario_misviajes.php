@@ -91,7 +91,7 @@
 									<a class="dropdown-item" href="usuario_perfil.php">Mi perfil</a>
 									<a class="dropdown-item" href="usuario_misviajes.php">Mis viajes</a>
 									<a class="dropdown-item" href="modificar_usuario.php">Modificar perfil</a>
-									<a class="dropdown-item" href="usuario_modificar">Cambiar contraseña</a>
+									<a class="dropdown-item" href="usuario_modificarp.php">Cambiar contraseña</a>
 									<form class="form-inline" action="p_cerrarsesion.php">
 										<button type="submit" class ="btn btn-primary btn-lg">Cerrar sesion</button>
 										</form>

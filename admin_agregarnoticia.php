@@ -73,40 +73,39 @@
 
 				</div>
 			</div>
-	<div class="col-4 borde1 mgtop" >
-		<ul class="navbar" style="margin-top:12px;">
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			Agregar
-			</a>
-			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
-				<a class="dropdown-item" href="modificar_viaje.php">Modificar viajes</a>
-				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
+			<div class="col-4 borde1 mgtop" >
+				<ul class="navbar" style="margin-top:12px;">
+				<li class="nav-item dropdown">
+					<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Agregar
+					</a>
+					<div class="dropdown-menu fondonegro">
+						<a class="dropdown-item" href="admin_agregarguia.php">Agregar guía</a>
+						<a class="dropdown-item" href="admin_agregarviaje.php">Agregar viaje</a>
+						<a class="dropdown-item" href="admin_agregarnoticia.php">Agregar noticias</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Modificar
+					</a>
+					<div class="dropdown-menu fondonegro">
+						<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
+						<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				Revisar
+					</a>
+					<div class="dropdown-menu fondonegro">
+						<a class="dropdown-item" href="admin_verguias.php">Ver guías registrados</a>
+						<a class="dropdown-item" href="admin_verviajes.php">Ver viajes</a>
+						<a class="dropdown-item" href="admin_revisarpostulacion.php">Revisar postulaciones</a>
+					</div>
+				</li>
+				</ul>
 			</div>
-		</li>
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			Modificar
-			</a>
-			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="usuario_perfil.php">Modificar noticias</a>
-				<a class="dropdown-item" href="usuario_misviajes.php">Modificar viajes</a>
-				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
-			</div>
-		</li>
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-		Revisar
-			</a>
-			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="admin_verguias.php">Ver guías registrados</a>
-				<a class="dropdown-item" href="admin_verviajes.php">Ver viajes</a>
-				<a class="dropdown-item" href="admin_revisarpostulacion.php">Revisar postulaciones</a>
-			</div>
-		</li>
-		</ul>
-	</div>
 	<div class="col-5 borde1" style="padding:25px;">
 		<form action="p_cerrarsesionadmin.php">
 			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
@@ -141,7 +140,7 @@
 						</tr>
 						<tr>
 							<td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()" ></td>
-						</tr>						
+						</tr>
 					 </table>
 				 </form>
 				</div></div>

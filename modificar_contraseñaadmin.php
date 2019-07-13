@@ -4,9 +4,9 @@
 		window.location = "index.php";
 	}
 
-	function guiaenviaje(){
-		alert("No puede borrar al guia, debe modificar el viaje primero o eliminarlo");
-	}
+  function volverPanelAdmin(){
+    location.href ="panel_admin.php";
+  }
 </script>
 <?php
 		require 'isLoginAdmin.php';
@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones17.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -117,75 +117,30 @@
 	</div>
 	</div>
 	</div>
-		<div class="col-12 contentainer-fluid " style="height:900px;">
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10 contenedortr containerpadre" style="margin-top:50px; width:auto;">
-					<div id="tabla_mostrar_guias" class="table_guias">
-						<?php
-				include "conexion.php";
-
-				if (isset($_POST['eliminar'])){
-					$id_guia = $_POST['id'];
-
-					$eliminar = "DELETE FROM t_guia_trekking where id_guia = '".$id_guia."' ";
-					$query = "SELECT * from t_guia_trekking";
-
-					$buscarguiaen = "SELECT id_guia FROM t_viaje WHERE id_guia = '$id_guia'";
-					$confirmar = mysqli_query($conexion, $buscarguiaen);
-
-					if (mysqli_fetch_row($confirmar)>0) {
-						echo "<script>guiaenviaje()</script>";
-					}
-
-					error_reporting(E_ERROR | E_PARSE);
-						$ejecutar = mysqli_query($conexion,$eliminar);
-						if (!$ejecutar) {
-							echo "<script>errorEliminar()</script>";
-							header('location:admin_verguias.php');
-						}
-							echo "Guía eliminado correctamente";
-							header('location:admin_verguias.php');
-
-				}else{
-				$query = "SELECT * from t_guia_trekking";
-				$mostrar = mysqli_query($conexion,$query);
-
-				while ($row = mysqli_fetch_row($mostrar)) {
-				$id = $row[0];
-				echo "
-						<table class='table table-responsive'>
-						<tr>
-						<td height='100px' width='150px;'><p>$row[0]</p></td>
-					  <td height='100px' width='150px;'><p>$row[1]</p></td>
-					  <td height='100px' width='150px;'><p>$row[2]</p></td>
-					  <td height='100px' width='150px;'><p>$row[3]</p></td>
-					  <td height='100px' width='150px;'><p>$row[4]</p></td>
-					  <td height='100px' width='150px;'><p>$row[5]</p></td>
-					  <td height='100px' width='150px;'><p>$row[6]</p></td>
-					  <td>
-					  <form method='POST'>
-					  	<input type='hidden' name='id' value='$row[0]''>
-					  	<input type='submit' name='eliminar' value='Eliminar'>
-					  </form></td>
-						</tr>
-					  </table>
-				";
-				}
-				echo '<a href="panel_admin.php">Volver</a>';
-			}
-				mysqli_close($conexion);
-
-			 ?>
-					</div>
-					</div>
-				</div>
-				<div class="col-1"></div>
-			</div>
-		</div>
-					<div class="cargando1" id="cargando1" style='display: none'>
-					</div>
-
-	</div>
+		<div class="col-12 contentainer-fluid " style="height:900px; ">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 containerpadre contenedortr" style="margin-top:100px">
+          <form action='p_modificar_padmin.php' name='formmpass' id='formmpass' enctype='multipart/form-data' method='post'>
+            <table>
+              <tr>
+                <td>Ingrese nueva contraseña:</td>
+                <td><input type="password" id='txtPassword' name='txtPassword'></td>
+              </tr>
+              <tr>
+                <td><input type="button" value="Cambiar contraseña" style="margin-top:15px" onclick="mod_pass_admin()"></td>
+                <td></td>
+              </tr>
+            </table>
+          </form>
+          <input type="button" value="Volver" onclick="volverPanelAdmin()">
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <div class="cargando1" id="cargando1" style='display: none'>
+    </div>
+</div>
+</div>
 </body>
 </html>

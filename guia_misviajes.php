@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones17.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -110,8 +110,8 @@
 	</div>
 	<div class="col-12 contentainer-fluid " style="height:900px; ">
 		<div class="row">
-			<div class="col-3"></div>
-			<div class="col-6 containerpadre contenedortr" style="margin-top:50px;">
+			<div class="col-2"></div>
+			<div class="col-8 containerpadre contenedortr" style="margin-top:50px;">
 				<div id="guia_misviajes" class="guia_misviajes">
 					<h1>Próximos viajes por realizar</h1>
 
@@ -136,10 +136,10 @@
 								$ejecutar = mysqli_query($conexion,$eliminar);
 								if (!$ejecutar) {
 									echo "<script>errorEliminar()</script>";
-									header('location:guia_misviajes.php.php');
+									header('location:guia_misviajes.php');
 								}
 									echo "<script>eliminarcorrecto()</script>";
-									header('location:guia_misviajes.php.php');
+									header('location:guia_misviajes.php');
 
 
 
@@ -150,7 +150,7 @@
 						$ejecutar = mysqli_query($conexion, $query);
 						while ($row=mysqli_fetch_row($ejecutar)) {
 							echo "
-							<table class='tabla_pagados'>
+							<table class='table'>
 							<tr>
 							<td>
 							<form method='POST'>
@@ -167,7 +167,7 @@
 								<td><p>Nombre: $row[0]</p></td>
 								<td><p>Fecha: $row[1]</p></td>
 								<td><p>$row[2]</p></td>
-								<td>Hora reunión: <p>$row[3]</p></td>
+								<td><p>Hora reunión: </p><p>$row[3]</p></td>
 							</tr>
 							</table>";
 							}
@@ -176,7 +176,7 @@
 					 <button onclick="volverGuiaPerfil()">Volver</button>
 				</div>
 			</div>
-			<div class="col-3"></div>
+			<div class="col-2"></div>
 		</div>
 	</div>
 

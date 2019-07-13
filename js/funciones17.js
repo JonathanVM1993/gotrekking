@@ -268,10 +268,53 @@ function modificar_noticia(){
 }
 
 function mod_pass_admin(){
-  alert("llega");
 	var parametros = new FormData($("#formmpass")[0]);
 	$.ajax({
 		url: "p_modificar_padmin.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function mod_pass_usuario(){
+	var parametros = new FormData($("#formmpassU")[0]);
+	$.ajax({
+		url: "p_modificar_pusuario.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function mod_pass_guia(){
+	var parametros = new FormData($("#formmpassG")[0]);
+	$.ajax({
+		url: "p_modificar_pguia.php",
 		type: "post",
 		data: parametros,
 		contentType: false,

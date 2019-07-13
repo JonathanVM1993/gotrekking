@@ -3,6 +3,9 @@
 		alert("Usted no tiene permiso");
 		window.location = "index.php";
 	}
+	function volverPanel(){
+    location.href = 'panel_admin.php';
+  }
 </script>
 <?php
 		require 'isLoginAdmin.php';
@@ -90,8 +93,7 @@
 			Modificar
 			</a>
 			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
-				<a class="dropdown-item" href="modificar_viaje.php">Modificar viajes</a>
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>				
 				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
 			</div>
 		</li>
@@ -132,6 +134,7 @@
 				 ?>
 				</select>
 				<input type="button" onclick="mostrarNoticia()" value="Mostrar">
+				<input type='button' value='Volver' onclick='volverPanel()'>
 				</form>
 				<div class="cargando1" id="cargando1">
 				</div>

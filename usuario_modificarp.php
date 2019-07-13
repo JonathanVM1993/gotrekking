@@ -8,19 +8,17 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb5.css">
+	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones11.js"></script>
-  <script src="js/jqueryajax.js"></script>
+	<script src="js/funciones10.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		function irModificar(){
 			location.href = "modificar_usuario.php"
 		}
-    function volverPerfil(){
-      location.href = "usuario_perfil.php";
-    }
-
 	</script>
 	<script>
 		$(document).ready(function() {
@@ -53,17 +51,21 @@
 			});
 	</script>
 	<style type="text/css">
+
 	</style>
 
 	</style>
 </head>
 <body>
-	<div class="container-fluid fondonegro ">
+	<div class="container-fluid fondonegro">
 		<div class="row">
 			<div class="col-3 fondonegro borde1">
+				<div class="container">
+
+				</div>
 			</div>
-	<div class="col-4 borde1 mgtop " >
-	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
+	<div class="col-4 borde1 mgtop" >
+	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 sticky-top" style="padding:40px" >
 		<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
 		<li class="nav-item"><a href="noticias.php" class="nav-link">Noticias</a></li>
 		<li class="nav-item"><a href="usuario_viajes.php" class="nav-link">Ver viajes</a></li>
@@ -89,7 +91,7 @@
 									<a class="dropdown-item" href="usuario_perfil.php">Mi perfil</a>
 									<a class="dropdown-item" href="usuario_misviajes.php">Mis viajes</a>
 									<a class="dropdown-item" href="modificar_usuario.php">Modificar perfil</a>
-                  <a class="dropdown-item" href="usuario_modificarp.php">Cambiar contraseña</a>
+									<a class="dropdown-item" href="usuario_modificarp.php">Cambiar contraseña</a>
 									<form class="form-inline" action="p_cerrarsesion.php">
 										<button type="submit" class ="btn btn-primary btn-lg">Cerrar sesion</button>
 										</form>
@@ -103,7 +105,7 @@
 			}
 			else{
 				?>
-				<div class="col-12 borde1" style="margin-top:35px;">
+			<div class="col-12 borde1" style="margin-top:38px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
 				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
 						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">
@@ -117,59 +119,28 @@
 	</div>
 	</div>
 	<div class="col-12 contentainer-fluid " style="height:900px; ">
-		<div class="row">
-			<div class="col-4"></div>
-			<div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
-				<div class="formulario1" id="formulario">
-					<h1>Registrate</h1>
-					<ul>
-						<form name="formulario-envia" id="formulario-envia" enctype="multipart/form-data" method="post">
-							<table class="tablaregistrar">
-								<tr>
-									<td><p>Correo:</p></td>
-									<td><input class="sinborde"  name="txtCorreo"   type="text" id="txtCorreo"></td>
-								</tr>
-								<tr>
-									<td><p>Nombres:</p></td>
-									<td><input class="sinborde" name="txtNombres"   type="text" id="txtNombres"></td>
-								</tr>
-								<tr>
-									<td><p>Apellidos:</p></td>
-									<td><input class="sinborde" name="txtApellidos"   type="text" id="txtApellidos"></td>
-								</tr>
-								<tr>
-									<td><p>Edad:</p></td>
-									<td><input class="sinborde" name="txtEdad"   type="text" id="txtEdad"></td>
-								</tr>
-								<tr>
-									<td><p>Rut:</p></td>
-									<td><input class="sinborde" name="txtRut"   type="text" id="txtRut"></td>
-								</tr>
-								<tr>
-									<td><p>Contraseña:</p></td>
-									<td><input class="sinborde" name="txtContraseña"  type="text" id="txtContraseña"></td>
-								</tr>
-								<tr>
-									<td><p>Enfermedad:</p></td>
-									<td><input class="sinborde" name="txtEnfermedad"  type="text" id="txtEnfermedad"></td>
-								</tr>
-								<tr>
-									<td><p>Foto de perfil:</p></td>
-									<td><input class="sinborde" type="file" name="foto"  id="foto"></td>
-								</tr>
-								<tr>
-									<td><input type="button" value="Registrar" name ="btnR"id="btnR" onclick="registrar_usuario()"></td>
-								</tr>
-							</table>
-							</form>
-					</ul>
-							</div>
-							<div class="cargando1" id="cargando1">
-							</div>
-			</div>
-			<div class="col-4"></div>
-		</div>
-	</div>
-	</div>
-</body>
-</html>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 containerpadre contenedortr" style="margin-top:100px">
+        <form action='p_modificar_pusuario.php' name='formmpassU' id='formmpassU' enctype='multipart/form-data' method='post'>
+          <table>
+            <tr>
+              <td>Ingrese nueva contraseña:</td>
+              <td><input type="password" id='txtPassword' name='txtPassword'></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="Cambiar contraseña" style="margin-top:15px" onclick="mod_pass_usuario()"></td>
+            </tr>
+          </table>
+        </form>
+        <input type="button" value="Volver" onclick="miPerfil()" style="margin-top:10px;">
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+  <div class="cargando1" id="cargando1" style='display: none'>
+  </div>
+
+  </div>
+  </body>
+  </html>
