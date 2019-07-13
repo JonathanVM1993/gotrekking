@@ -159,8 +159,6 @@ function agregar_bitacora(){
 }
 
 function modificar_usuario(){
-
-	alert("Llega");
 	var parametros = new FormData($("#formmu")[0]);
 	$.ajax({
 		url: "p_modificarusuario.php",
@@ -176,6 +174,73 @@ function modificar_usuario(){
 		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
 		},
 		success: function(parametroRetorno){
+			$("#cargando1").html(parametroRetorno);
+      alert("Modificado correctamente");
+		}
+	});
+}
+function mostrarNoticia(){
+	var parametros = new FormData($("#formmodificarn")[0]);
+	$.ajax({
+		url: "mostrar_noticia_mod.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function modificarPerfilG(){
+	var parametros = new FormData($("#modificarg")[0]);
+	$.ajax({
+		url: "p_modificar_guia.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function modificarViaje(){
+  alert("llega");
+	var parametros = new FormData($("#formmodificarv")[0]);
+	$.ajax({
+		url: "p_modificar_viaje.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
 			$("#cargando1").html(parametroRetorno);
 		}
 	});

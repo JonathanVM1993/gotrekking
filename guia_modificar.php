@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones13.js"></script>
+	<script src="js/funciones14.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -113,7 +113,7 @@
         <div class="col-4"></div>
         <div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
           <h1>Modifica aquí tu perfil de guía:</h1>
-          <form name="modificarg" id="modificarg" enctype="multipart/form-data" method="post">
+          <form action="p_modificar_guia.php" name="modificarg" id="modificarg" enctype="multipart/form-data" method="post">
             <table>
           <tr>
             <td>Nombre:</td>
@@ -140,8 +140,8 @@
             <td><input type="text" id="txtCorreo" name="txtCorreo"></td>
           </tr>
           <tr>
-            <td><input type="button" onclick="mostrarNoticia()" value="Modificar"></td>
-            <td></td>
+            <td><input type="button" onclick="modificarPerfilG()" value="Modificar"></td>
+            <td><input type="submit" value="Probar"></td>
           </tr>
           </table>
           </form>
@@ -149,6 +149,8 @@
         <div class="col-4"></div>
       </div>
     </div>
+	</div>
+	<div class="cargando1" id="cargando1" style='display: none'>
 	</div>
 </body>
 </html>

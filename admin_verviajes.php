@@ -120,8 +120,8 @@
 	</div>
 		<div class="col-12 contentainer-fluid " style="height:900px;">
 			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-8 containerpadre contenedortr" style="margin-top:50px;">
+				<div class="col-1"></div>
+				<div class="col-10 containerpadre contenedortr" style="margin-top:50px;">
 					<div id="tabla_mostrar_guias" class="table_guias">
 						<?php
 				include "conexion.php";
@@ -129,7 +129,7 @@
 				if (isset($_POST['eliminar'])){
 					$id_viaje = $_POST['id'];
 					$eliminar = "DELETE FROM t_viaje where id_viaje = '".$id_viaje."' ";
-					$query = "SELECT * from t_viaje";				
+					$query = "SELECT * from t_viaje";
 
 					$eliminarcuestionario = "DELETE FROM cuestionario where viaje_cuestionario = '$id_viaje'";
 					$ejecutar = mysqli_query($conexion, $eliminarcuestionario);
@@ -140,24 +140,27 @@
 					error_reporting(E_ERROR | E_PARSE);
 						$ejecutar = mysqli_query($conexion,$eliminar);
 						if (!$ejecutar) {
-							echo "<script>errorEliminar()</script>";
+							echo "<script>eliminarcorrecto()</script>";
 							header('location:admin_verviajes.php');
 						}
 							echo "<script>eliminarcorrecto()</script>";
 							header('location:admin_verviajes.php');
-
 				}else{
 				$query = "SELECT * from t_viaje";
 				$mostrar = mysqli_query($conexion,$query);
-
-
 				while ($row = mysqli_fetch_row($mostrar)) {
 				$id = $row[0];
+				$id_del_guia = $row[3];
+				$querybg = "SELECT nom_guia,ap_p_guia FROM t_guia_trekking
+				WHERE id_guia = '$id_del_guia'";
+        $ejecutarbg = mysqli_query($conexion, $querybg);
+				$rowgb = mysqli_fetch_array($ejecutarbg);
+
 				echo "<table class='table table-responsive dark'>
 						<td><p>Id: $row[0]</p></td>
 						<td><p>Nombre: $row[1]</p></td>
 						<td><p>Fecha viaje: $row[2]</p></td>
-						<td><p>Id guia: $row[3]</p></td>
+						<td><p>Nombre guia: $rowgb[0] $rowgb[1]</p></td>
 						<td><p>Ubicacion: $row[9]</p></td>
 						<td><p>Precio: $row[11]</p></td>
 						<td>
@@ -171,11 +174,16 @@
 							<input type='submit' value='Inscritos'/>
 							</form>
 						</td>
+						<td>
+							<form action='admin_modificarviaje.php' method='POST'>
+							<input type='hidden' name='viaje_id' id='viaje_id' value='$row[0]'/>
+							<input type='submit' value='Modificar'/>
+							</form>
+						</td>
 						</td>
 						</tr>
 						</table>
 				";
-
 				}
 				echo '<a href="panel_admin.php">Volver</a>';
 			}
@@ -184,13 +192,11 @@
 			 ?>
 					</div>
 				</div>
-				<div class="col-2"></div>
+				<div class="col-1"></div>
 			</div>
 		</div>
 
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-		</div>
-	</div>
 </body>
 </html>
