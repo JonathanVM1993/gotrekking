@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones18.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -124,6 +124,14 @@
 
 					echo "<h1>Viajes realizados como guía:</h1>";
 					echo "<h1 style='text-size:400px'>$resultado</h1>";
+					echo "
+				<form name='formsubirfotog' id='formsubirfotog' enctype='multipart/form-data' method='post'>
+						<p>Sube una foto para tu perfil</p>
+						<input type='file' id='fotog' name='fotog' />
+						<button onclick='agregarFotoGuia()'>Subir foto</button>
+					</form>
+
+					";
 
 					 ?>
 
@@ -131,10 +139,8 @@
 			</div>
 			<div class="col-4"></div>
 		</div>
-
-
 		</div>
-		</div>
-	</div>
+		<div class="cargando1" id="cargando1" style='display: none'>
+				</div>
 </body>
 </html>

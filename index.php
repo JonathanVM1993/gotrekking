@@ -60,14 +60,15 @@
 <body>
 	<div class="container-fluid fondonegro ">
 		<div class="row">
-			<div class="col-3 fondonegro borde1">
+			<div class="col-2 fondonegro borde1">
 			</div>
-	<div class="col-4 borde1 mgtop " >
+	<div class="col-5 borde1 mgtop " >
 	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
 		<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
 		<li class="nav-item"><a href="noticias.php" class="nav-link">Noticias</a></li>
 		<li class="nav-item"><a href="usuario_viajes.php" class="nav-link">Ver viajes</a></li>
 		<li class="nav-item"><a href="usuario_postulacion.php" class="nav-link">Postularme como guia</a></li>
+		<li class="nav-item"><a href="usuario_verguias.php" class="nav-link">Conoce los guías</a></li>
 	</ul>
 	</div>
 	<div class="col-5 borde1">
@@ -134,8 +135,6 @@
 	</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-		</div>
-	</div>
 <script src="js/bootstrap.min.js"></script>
 <script src="jquery-3.3.1.slim.min"></script>
 <script src="popper.min"></script>

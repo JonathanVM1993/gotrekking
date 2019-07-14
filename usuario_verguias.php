@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones11.js"></script>
+	<script src="js/funciones17.js"></script>
   <script src="js/jqueryajax.js"></script>
 	<script>
 		function irModificar(){
@@ -89,7 +89,7 @@
 								<div class="dropdown-menu fondonegro">
 									<a class="dropdown-item" href="usuario_perfil.php">Mi perfil</a>
 									<a class="dropdown-item" href="usuario_misviajes.php">Mis viajes</a>
-									<a class="dropdown-item" href="usuario_modificar.php">Modificar perfil</a>
+									<a class="dropdown-item" href="modificar_usuario.php">Modificar perfil</a>
                   <a class="dropdown-item" href="usuario_modificarp.php">Cambiar contraseña</a>
 									<form class="form-inline" action="p_cerrarsesion.php">
 										<button type="submit" class ="btn btn-primary btn-lg">Cerrar sesion</button>
@@ -104,7 +104,7 @@
 			}
 			else{
 				?>
-				<div class="col-12 borde1" style="margin-top:38px;">
+				<div class="col-12 borde1" style="margin-top:35px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
 				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
 						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">
@@ -117,49 +117,44 @@
 	</div>
 	</div>
 	</div>
-	<div class="col-12 contentainer-fluid" style="height:700px;">
-<div class="row">
-	<div class="col-4 "></div>
-	<div class="col-4 contenedortr containerpadre" style="margin-top:100px;"><div class="postulacion" id="postulacion">
-	<?php
-	require_once("p_isLogin.php");
-	if (!$estado) {
-		?>
-				<h1>Debe estar logueado para poder postular</h1>
+	<div class="col-12 contentainer-fluid " style="height:900px;">
 
-			<?php
-		}
-		else{
-			?>
-			<form action="p_agregarpostulacion.php" method="post" enctype="multipart/form-data">
-				<h1>Por favor llene el formulario de postulación:</h1>
-				<table >
-					<tr>
-						<td><p>Curriculum:</p></td>
-						<td><input type="file" name="img"  id="img"></td>
-					</tr>
-					<tr>
-						<td>Experiencia en trekking:</td>
-						<td><textarea name="txtExperiencia" id="txtExperiencia" cols="30" rows="10"></textarea></td>
-					</tr>
-					<tr>
-						<td><input type="submit" value="Enviar postulacion"></td>
-					</tr>
-				</table>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
 
-			</form>
-			<?php
-		}?>
-	</div></div>
-	<div class="col-4 "></div>
-</div>
-	</div>
-					<div class="cargando1" id="cargando1" style='display: none'>
-					</div>
-		</div>
-	</div>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="jquery-3.3.1.slim.min"></script>
-	<script src="popper.min"></script>
+
+              <?php
+
+                include 'conexion.php';
+                $query = "SELECT nom_guia, ap_p_guia, ap_m_guia,correo,imagen FROM t_guia_trekking";
+                $ejecutar = mysqli_query($conexion, $query);
+                while ($row=mysqli_fetch_array($ejecutar)) {
+                        echo "
+                        <div class='row'>
+                        <div class='col-6' style='margin-top:30px'>
+                        <p>Nombre guía: $row[0] $row[1]</p>
+                        <p>Contacto: $row[3]</p>
+                        </div>
+                        <div class='col-6  style='margin-top:20px;><img class='rounded-circle' src='$row[4]' width='150px' height='150px' /></div>
+                        </div>";
+                        echo "<br />";
+                }
+
+               ?>
+
+
+          </div>
+        </div>
+        <div class="col-4"></div>
+      </div>
+
+
+  </div>
+          <div class="cargando1" id="cargando1" style='display: none'>
+          </div>
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-3.3.1.slim.min"></script>
+<script src="popper.min"></script>
 </body>
 </html>

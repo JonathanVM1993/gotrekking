@@ -333,8 +333,7 @@ function mod_pass_guia(){
 	});
 }
 
-function agregarFotoGuia(){
-	alert("llega");
+function agregarFotoGuia(){	
 	var parametros = new FormData($("#formsubirfotog")[0]);
 	$.ajax({
 		url: "p_subir_fotoguia.php",
