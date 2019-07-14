@@ -14,7 +14,7 @@
 
 <?php
 
-require_once('p_isLogin.php');
+require_once('isLoginGuia.php');
 include 'conexion.php';
 
 
@@ -23,7 +23,7 @@ $pass = $_POST['txtPassword'];
 
 
 
-$verificarp = "SELECT password,id_usuario FROM t_usuario WHERE password ='$pass' and id_usuario='$getId'";
+$verificarp = "SELECT password,id_guia FROM t_guia_trekking WHERE password ='$pass' and id_guia='$getIdGuia'";
 $ejecutarveri = mysqli_query($conexion, $verificarp);
 
 if (mysqli_fetch_array($ejecutarveri)>0) {
@@ -31,7 +31,7 @@ if (mysqli_fetch_array($ejecutarveri)>0) {
   exit;
 }
 
-$queryp = "UPDATE t_usuario SET password='$pass' WHERE id_usuario='$getId'";
+$queryp = "UPDATE t_guia_trekking SET password='$pass' WHERE id_guia='$getIdGuia'";
 $ejecutar = mysqli_query($conexion, $queryp);
 
 if (!$ejecutar) {

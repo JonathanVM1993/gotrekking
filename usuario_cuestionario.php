@@ -1,3 +1,9 @@
+<script>
+function volverUsuarioViajes(){
+	location.href = "usuario_viajes.php";
+}
+
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,8 +187,8 @@
 					<?php } ?>
 			</select>
 			<input type="submit" value="Enviar cuestionario">
-			<input type='button' value='Volver' name ='btnR'id='btnR' onclick='irViajes()'>
 				</form>
+				<input type='button' value='Volver' onclick='volverUsuarioViajes()'>
 			</div>
 		<div class="cargando1" id="cargando1" style='display: none'>
 		</div></div>

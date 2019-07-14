@@ -109,45 +109,75 @@
 	</div>
 	</div>
 	<div class="col-12 contentainer-fluid " style="height:900px; ">
-		<div class="row">
-			<div class="col-2"></div>
-			<div class="col-4 containerpadre contenedortr" style="margin-top:10px;">
-				<div id="tabla_mostrar_guias">
-					<h1>Lista de inscritos</h1>
-					<?php
-					include "conexion.php";
-					$id_viaje = $_POST['viaje_id'];
-					$query = "SELECT * FROM usuarios_viaje WHERE n_viaje = '$id_viaje'";
-					$ejecutar = mysqli_query($conexion, $query);
+    <div class="row">
+      <div class="col-4"></div>
+          <div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
 
-					while ($row = mysqli_fetch_row($ejecutar)) {
-						$queryuser = "SELECT * FROM t_usuario WHERE id_usuario='$row[1]'";
-						$queryejecutar = mysqli_query($conexion, $queryuser);
-						$row1 = mysqli_fetch_row($queryejecutar);
-						$nombreuser = $row1[2];
-						$apellidouser = $row1[3];
-						$estadopago = $row[3];
-						$viaje = $row[3];
-					echo "<table class='table'>
-					<tr>
-						<td><p>Nombre: $nombreuser $apellidouser</p></td>
-						<td><p>Estado pago: $estadopago</p></td>
-						<td>
-						<form action='usuario_vercuestionaroguia.php' method='POST'>
-						<input type='hidden' value='$row[1]' id='idu' name='idu' />
-						<input type='submit' value='Ver cuestionario' name ='btnR'id='btnR'()'>
-						</form>
-						</td>
-					</tr>
-					</table>";
-					}
-					 ?>
-					<input type='button' value='Volver' name ='btnR'id='btnR' onclick='volverGuiaViajes()'>
-				</div>
-			</div>
-			<div class="col-2"></div>
-		</div>
-					<div class="cargando1" id="cargando1" style='display: none'>
-					</div>
+
+            <?php
+              include 'conexion.php';
+              $id_user = $_POST['idu'];
+
+              $query = "SELECT * FROM cuestionario WHERE usuario_cuestionario ='$id_user'";
+              $ejecutar = mysqli_query($conexion, $query);
+
+              $row = mysqli_fetch_array($ejecutar);
+
+              $querybuscarnivel = "SELECT * from nivel_viaje WHERE id_nivel ='$row[1]'";
+              $ejecutarq = mysqli_query($conexion, $querybuscarnivel);
+              $row2 = mysqli_fetch_array($ejecutarq);
+
+              echo "
+              <table class='table'>
+              <tr>
+                <td><p>Experiencia:</p></td>
+                <td><p>$row2[1]</p></td>
+              </tr>
+              <tr>
+                <td><p>Trekking realizado anteriormente:</p></td>
+                <td><p>$row[4]</p></td>
+              </tr>
+              <tr>
+                <td><p>Calzado:</p></td>
+                <td><p>$row[5]</p></td>
+              </tr>
+              <tr>
+                <td><p>Cuenta con capa:</p></td>
+                <td><p>$row[6]</p></td>
+              </tr>
+              <tr>
+                <td><p>Cuenta con bastón:</p></td>
+                <td><p>$row[7]</p></td>
+              </tr>
+              <tr>
+                <td><p>Actividad física a la semana:</p></td>
+                <td><p>$row[8]</p></td>
+              </tr>
+              <tr>
+                <td><p>Estatura:</p></td>
+                <td><p>$row[9]</p></td>
+              </tr>
+              <tr>
+                <td><p>Peso:</p></td>
+                <td><p>$row[10]</p></td>
+              </tr>
+              <tr>
+                <td><p>Alguna enfermedad o problema:</p></td>
+                <td><p>$row[11]</p></td>
+              </tr>
+              <tr>
+                <td><button onclick='volverGuiaViajes()'>Volver</button></td>
+              </tr>
+              </table>";
+
+
+             ?>
+
+          </div>
+          <div class="col-4"></div>
+        </div>
+  </div>
+    <div class="cargando1" id="cargando1" style='display: none'>
+    </div>
 </body>
 </html>

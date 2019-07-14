@@ -7,6 +7,11 @@
 		alert("Verificando");
 	}
 
+	function volverPaneldeAdmin(){
+		alert("Viaje agregado con exito");
+		location.href = "admin_agregarviaje.php";
+	}
+
 </script>
 
 <script src="js/funciones2.js"></script>
@@ -70,45 +75,12 @@
 		echo "Error al agregar el viaje";
 	}else{
 		echo "El viaje ha sido agregado con exito";
-		header('admin_agregarviaje.php');
+		echo "<script>volverPaneldeAdmin()</script>";
 	}
 
-	echo "$nombreviaje";
-	echo "<br/>";
-	echo "$fecha_viaje";
-	echo "<br/>";
-	echo "$guia";
-	echo "<br/>";
-	echo "$nombreArchivo1";
-	echo "<br/>";
-	echo "$nombreArchivo2";
-	echo "<br/>";
-	echo "$nombreArchivo3";
-	echo "<br/>";
-	echo "$nombreArchivo4";
-	echo "<br/>";
-	echo "$descripcion";
-	echo "<br/>";
-	echo "$ubicacion1";
-	echo "<br/>";
-	echo "$nivel1";
-	echo "<br/>";
-	echo "$precio1";
-	echo "<br/>";
-	echo "$horaviaje";
-	echo "<br/>";
-	echo "$estado_viaje";
-	echo "<br/>";
-	echo "$ruta5";
-	echo "<br/>";
-	echo "$ruta6";
-	echo "<br/>";
-	echo "$ruta7";
-	echo "<br/>";
 
-	echo "<a href='admin_agregarviaje.php'>Volver</a>";
 
-	echo "<script>probando()</script>";
+mysqli_close($conexion);
 
 
 

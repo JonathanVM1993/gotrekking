@@ -109,45 +109,27 @@
 	</div>
 	</div>
 	<div class="col-12 contentainer-fluid " style="height:900px; ">
-		<div class="row">
-			<div class="col-2"></div>
-			<div class="col-4 containerpadre contenedortr" style="margin-top:10px;">
-				<div id="tabla_mostrar_guias">
-					<h1>Lista de inscritos</h1>
-					<?php
-					include "conexion.php";
-					$id_viaje = $_POST['viaje_id'];
-					$query = "SELECT * FROM usuarios_viaje WHERE n_viaje = '$id_viaje'";
-					$ejecutar = mysqli_query($conexion, $query);
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 containerpadre contenedortr" style="margin-top:100px">
+        <form action='p_modificar_pguia.php' name='formmpassG' id='formmpassG' enctype='multipart/form-data' method='post'>
+          <table>
+            <tr>
+              <td>Ingrese nueva contraseña:</td>
+              <td><input type="password" id='txtPassword' name='txtPassword'></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="Cambiar contraseña" style="margin-top:15px" onclick="mod_pass_guia()"></td>
+            </tr>
+          </table>
+        </form>
+        <input type="button" value="Volver" onclick="volverGuiaPerfil()" style="margin-top:10px;">
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
 
-					while ($row = mysqli_fetch_row($ejecutar)) {
-						$queryuser = "SELECT * FROM t_usuario WHERE id_usuario='$row[1]'";
-						$queryejecutar = mysqli_query($conexion, $queryuser);
-						$row1 = mysqli_fetch_row($queryejecutar);
-						$nombreuser = $row1[2];
-						$apellidouser = $row1[3];
-						$estadopago = $row[3];
-						$viaje = $row[3];
-					echo "<table class='table'>
-					<tr>
-						<td><p>Nombre: $nombreuser $apellidouser</p></td>
-						<td><p>Estado pago: $estadopago</p></td>
-						<td>
-						<form action='usuario_vercuestionaroguia.php' method='POST'>
-						<input type='hidden' value='$row[1]' id='idu' name='idu' />
-						<input type='submit' value='Ver cuestionario' name ='btnR'id='btnR'()'>
-						</form>
-						</td>
-					</tr>
-					</table>";
-					}
-					 ?>
-					<input type='button' value='Volver' name ='btnR'id='btnR' onclick='volverGuiaViajes()'>
-				</div>
-			</div>
-			<div class="col-2"></div>
-		</div>
-					<div class="cargando1" id="cargando1" style='display: none'>
-					</div>
+    <div class="cargando1" id="cargando1" style='display: none'>
+    </div>
 </body>
 </html>

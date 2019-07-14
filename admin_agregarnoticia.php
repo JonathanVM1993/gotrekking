@@ -149,7 +149,5 @@
 		</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-
-	</div>
 </body>
 </html>

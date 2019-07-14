@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones17.js"></script>
 	<script>
 		function irModificar(){
 			location.href = "modificar_usuario.php"

@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones17.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -155,13 +155,32 @@
         $ejecutarbg = mysqli_query($conexion, $querybg);
 				$rowgb = mysqli_fetch_array($ejecutarbg);
 
+				$pagados = "Pagado";
+				$nopagados = "No pagado";
+
+				$cantidadInscritos = "SELECT n_viaje FROM usuarios_viaje WHERE n_viaje='$id'";
+				$resultado = mysqli_query($conexion, $cantidadInscritos);
+        $rowcnt = mysqli_num_rows($resultado);
+
+				$cantidadNop = "SELECT n_viaje FROM usuarios_viaje WHERE estado_pago='$nopagados'";
+				$ejecutarcn = mysqli_query($conexion, $cantidadNop);
+				$rownopagados = mysqli_num_rows($ejecutarcn);
+
+				$cantidadPagado = "SELECT n_viaje FROM usuarios_viaje WHERE estado_pago='$pagados'";
+				$ejecutarpagados = mysqli_query($conexion, $cantidadPagado);
+				$rownpagados = mysqli_num_rows($ejecutarpagados);
+
+
 				echo "<table class='table table-responsive dark'>
-						<td><p>Id: $row[0]</p></td>
 						<td><p>Nombre: $row[1]</p></td>
 						<td><p>Fecha viaje: $row[2]</p></td>
 						<td><p>Nombre guia: $rowgb[0] $rowgb[1]</p></td>
 						<td><p>Ubicacion: $row[9]</p></td>
 						<td><p>Precio: $row[11]</p></td>
+						<td><p>Cantidad inscritos: $rowcnt</p></td>
+						<td><p>Cantidad pagados: $rownpagados</p></td>
+						<td><p>Cantidad no pagados: $rownopagados</p></td>
+						<td><p>Estado viaje: $row[13]</p></td>
 						<td>
 						<form method='POST'>
 							<input type='hidden' name='id' value='$row[0]''>

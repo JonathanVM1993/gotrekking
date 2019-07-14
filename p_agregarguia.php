@@ -18,6 +18,10 @@
 	function errorRegistro(){
 		alert("No se pudo registrar el guia $nombreguia1")
 	}
+
+	function userUsado(){
+		alert("El usuario del guía ya está siendo utilizado");
+	}
 </script>
 <?php
 		include 'conexion.php';
@@ -33,6 +37,13 @@
 		$insertar = "INSERT INTO t_guia_trekking(nom_guia,ap_p_guia,ap_m_guia,rut,telefono,correo,password,user_guia) VALUES ('$nombre','$apellidopaterno','$apellidomaterno','$rut','$telefono','$correo','$password','$userg')";
 
 		$verificar_guia = mysqli_query($conexion,"SELECT * FROM t_guia_trekking WHERE correo = '$correo'");
+		$verificar_user = mysqli_query($conexion,"SELECT * FROM t_guia_trekking WHERE user_guia='$userg'");
+
+		if (mysqli_num_rows($verificar_user) > 0) {
+			echo "<script>userUsado()</script>";
+			exit;
+		}
+
 
 			if (mysqli_num_rows($verificar_guia) > 0) {
 				echo "El usuario ya se encuentra registrado con este correo";

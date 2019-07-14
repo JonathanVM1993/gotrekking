@@ -224,11 +224,8 @@
             </tr>
             <tr>
               <td><input type="hidden" value="<?php echo "$idv"?>" id="idviaje1" name="idviaje1"></td>
-              <td><input type="button" value="Modificar" name ="btnR"id="btnR" onclick="modificarViaje()"></td>
-              <td><input type="submit" value="Probar" name ="btnR"id="btnR"></td>
-            </tr>
-            <tr>
-              <td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()"></td>
+              <td><input type="button" value="Modificar" name ="btnR"id="btnR" onclick="modificarViaje()"></td>              
+							<td><input type="button" value="Volver" name ="btnR"id="btnR" onclick="volver_panel()"></td>
             </tr>
           </table>
         </form>
