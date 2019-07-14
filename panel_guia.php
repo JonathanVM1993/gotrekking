@@ -101,16 +101,39 @@
 		</li>
 		</ul>
 	</div>
-	<div class="col-5 borde1" style="padding:25px;">
+	<div class="col-4 borde1" style="padding:25px;">
 		<form action="p_cerrarsesionguia.php">
 			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
 		</form>
 	</div>
 	</div>
 	</div>
-		<div class="content-all">
-					<div id="guia_menu" class="guia_menu">
-					</div>
+		<div class="col-12 contentainer-fluid " style="height:900px; ">
+
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-4 containerpadre contenedortr" style="margin-top:300px;">
+
+					<?php
+					require_once 'isLoginGuia.php';
+					include 'conexion.php';
+
+					$contador = "SELECT finalizado_por FROM historial_viajes_finalizados WHERE finalizado_por='$getIdGuia'";
+					$ejecutarcontador = mysqli_query($conexion, $contador);
+					$resultado = mysqli_num_rows($ejecutarcontador);
+
+					echo "<h1>Viajes realizados como guía:</h1>";
+					echo "<h1 style='text-size:400px'>$resultado</h1>";
+
+					 ?>
+
+
+			</div>
+			<div class="col-4"></div>
+		</div>
+
+
+		</div>
 		</div>
 	</div>
 </body>

@@ -90,7 +90,7 @@
 			Modificar
 			</a>
 			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>				
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
 				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
 			</div>
 		</li>
@@ -111,6 +111,29 @@
 			<button type="submit" class ="btn - btn-warning">Cerrar sesion</button>
 		</form>
 	</div>
+	</div>
+	</div>
+	<div class="col-12 contentainer-fluid " style="height:900px; ">
+
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4 containerpadre contenedortr" style="margin-top:300px;">
+
+				<?php
+				include 'conexion.php';
+
+				$contador = "SELECT estado FROM historial_viajes_finalizados";
+				$ejecutarcontador = mysqli_query($conexion, $contador);
+				$resultado = mysqli_num_rows($ejecutarcontador);
+
+				echo "<h1>Viajes finalizados:</h1>";
+				echo "<h1 style='text-size:400px'>$resultado</h1>";
+
+				 ?>
+
+
+		</div>
+		<div class="col-4"></div>
 	</div>
 	</div>
 </body>
