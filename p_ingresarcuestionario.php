@@ -1,3 +1,19 @@
+<script>
+    function exito(){
+      alert("Cuestionario enviado con éxito, si desea pagar, entre al portal de pagos presionando pagar");
+      location.href = 'usuario_misviajes.php';
+    }
+    function yaRealizado(){
+      alert("El usuario ya realizó el cuestionario");
+      location.href='usuario_cuestionario.php'
+    }
+
+    function error(){
+      alert("No se ha podido enviar el cuestionario");
+    }
+
+</script>
+
 <?php
 
 require("p_isLogin.php");
@@ -37,18 +53,18 @@ echo "
 ";
 
 if (mysqli_num_rows($verificar) > 0) {
-  echo "El usuario ya realizó el cuestionario";
-  echo "<script>registroExito()</script>";
+  echo "<script>yaRealizado()</script>";
+
   exit;
 }
 $resultado = mysqli_query($conexion,$query);
 $agregar_lista = mysqli_query($conexion, $queryinscripcion);
 
 if (!$resultado) {
-  echo "No se han podido ingresar los datos";
+  echo "<script>error()</script>";
 }
 else{
-  echo "Datos agregados correctamente";
+  echo "<script>exito()</script>";
 }
 if (!$agregar_lista) {
   echo "Usuario no se ha podido inscribir en la lista del viaje";

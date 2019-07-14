@@ -23,10 +23,7 @@
     $imagen = $_FILES['imagennoticia'];
     $prueba = "hola";
 
-    echo "<script>funciona()</script>";
-    echo "$titulo";
-    echo "$fecha";
-    echo "$contenido";
+    
 
     $nombreArchivo1 = $_FILES['imagennoticia']['tmp_name'];
 

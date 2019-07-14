@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones17.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -123,35 +123,35 @@
 						<table class="tablaregistrar">
 							<tr>
 								<td><p>Nombre guía:</p></td>
-								<td><input class="sinborde"	id="txtNombre" name="txtNombre" type="text"></td>
+								<td><input class="sinborde"	id="txtNombre" name="txtNombre" type="text" onkeypress="return sololetras(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Apellido parterno guía:</p></td>
-								<td><input class="sinborde"	id="txtApellidoP" name="txtApellidoP" type="text"></td>
+								<td><input class="sinborde"	id="txtApellidoP" name="txtApellidoP" type="text" onkeypress="return sololetras(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Apellido materno guía:</p></td>
-								<td><input class="sinborde"	id="txtApellidoM" name="txtApellidoM" type="text"></td>
+								<td><input class="sinborde"	id="txtApellidoM" name="txtApellidoM" type="text" onkeypress="return sololetras(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Rut:</p></td>
-								<td><input class="sinborde"	id="txtRut" name="txtRut" type="text"></td>
+								<td><input class="sinborde"	id="txtRut" name="txtRut" type="text" onkeypress="return soloRut(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Teléfono:</p></td>
-								<td><input class="sinborde"	id="txtTelefono" name="txtTelefono" type="text"></td>
+								<td><input class="sinborde"	id="txtTelefono" name="txtTelefono" type="text" onkeypress="return soloTelefono(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Correo:</p></td>
-								<td><input class="sinborde"	id="txtCorreo" name="txtCorreo" type="text"></td>
+								<td><input class="sinborde"	id="txtCorreo" name="txtCorreo" type="text" onkeypress="return soloEmail(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Password:</p></td>
-								<td><input class="sinborde"	id="txtPassword" name="txtPassword" type="text"></td>
+								<td><input class="sinborde"	id="txtPassword" name="txtPassword" type="password" onkeypress="return soloPassword(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 								<td><p>Usuario del guía:</p></td>
-								<td><input class="sinborde"	id="txtUserG" name="txtUserG" type="text"></td>
+								<td><input class="sinborde"	id="txtUserG" name="txtUserG" type="text" onkeypress="return soloPassword(event)" onpaste="return false"></td>
 							</tr>
 							<tr>
 						<td><input type="button" class= "bubbly-button" value="Registrar" name ="btnR"id="btnR" onclick="registrar_guia()"></td>

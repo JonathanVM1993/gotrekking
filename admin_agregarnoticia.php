@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -121,15 +121,15 @@
 					 <table>
 						<tr>
 							<td><p>Título noticia:</p></td>
-							<td><input type="text" id="txtNoticia" name="txtNoticia"></td>
+							<td><input type="text" id="txtNoticia" name="txtNoticia" onkeypress="return soloTextoGrande(event)" onpaste="return false"></td>
 						</tr>
 						<tr>
 							<td><p>Fecha:</p></td>
-							<td><input type="text" id="txtFecha" name="txtFecha"></textarea></td>
+							<td><input type="text" id="txtFecha" name="txtFecha" onkeypress="return soloFecha(event)" onpaste="return false"></textarea></td>
 						</tr>
 						<tr>
 							<td><p>Contenido noticia:</p></td>
-							<td><textarea name="txtContenido" id="txtContenido" cols="30" rows="10"></textarea></td>
+							<td><textarea name="txtContenido" id="txtContenido" cols="30" rows="10" onkeypress="return soloTextoGrande(event)"></textarea></td>
 						</tr>
 						<tr>
 							<td><p>Agregue imagen:</p></td>

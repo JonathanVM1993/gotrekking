@@ -136,7 +136,26 @@
                         <p>Nombre guía: $row[0] $row[1]</p>
                         <p>Contacto: $row[3]</p>
                         </div>
-                        <div class='col-6  style='margin-top:20px;><img class='rounded-circle' src='$row[4]' width='150px' height='150px' /></div>
+                        <div class='col-6  style='margin-top:20px;>
+												<div class='card' style='height:0px; width:0px; border:0px'>
+												<a href='#' data-toggle='modal' data-target='#imagen1'>
+												<img class='rounded-circle' src='$row[4]' width='150px' height='150px'/>
+												</a>
+												</div>
+
+												<div class='modal fade' id='imagen1' tabindex='-1' role='dialog'>
+											 <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+											 <span aria-hidden='true'>&times;</span>
+											 </button>
+											 <div class='modal-dialog modal-lg modal-dialog-centered' role='document'>
+											 <img class='rounded-circle' src='$row[4]' height='400px' width='400px'>
+											 </div>
+											 </div>
+
+
+
+
+												</div>
                         </div>";
                         echo "<br />";
                 }

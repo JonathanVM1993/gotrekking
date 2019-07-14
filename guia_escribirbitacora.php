@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -114,20 +114,20 @@
 			<div class="col-4 contenedortr containerpadre" style="margin-top:50px;">
 				<div id="guia_bitacoraE" class="guia_bitacoraE">
 					<h1>Bitácora del viajero</h1>
-					<form action="p_agregarb.php"name="form-b" id="form-b" enctype="multipart/form-data" method="post">
+					<form name="form-b" id="form-b" enctype="multipart/form-data" method="post">
 
 						 <p>Título de historia</p>
-						 <input type="text" name="txtTitulo" id="txtTitulo">
+						 <input type="text" name="txtTitulo" id="txtTitulo" onkeypress="return soloTextoGrande(event)" onpaste="return false">
 					 <p>Agrega historia a tu bitacora</p>
-					 <textarea name="d_bit" id="d_bit" rows="8" cols="50"></textarea>
+					 <textarea name="d_bit" id="d_bit" rows="8" cols="50" onkeypress="return soloTextoGrande(event)" onpaste="return false"></textarea>
 					 <br>
 					 <button name ="btnR"id="btnR" onclick="agregar_bitacora()">Agregar</button>
 					 </form>
 				</div>
 			</div>
 			<div class="col-4"></div>
-		</div>
-	</div>
-	</div>
+		</div>	
+	<div class="cargando1" id="cargando1" style='display: none'>
+  </div>
 </body>
 </html>

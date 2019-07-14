@@ -140,7 +140,7 @@
 					</tr>
 					<tr>
 						<td>Experiencia en trekking:</td>
-						<td><textarea name="txtExperiencia" id="txtExperiencia" cols="30" rows="10"></textarea></td>
+						<td><textarea name="txtExperiencia" id="txtExperiencia" cols="30" rows="10" onkeypress="return soloTextoGrande(event)" onpaste="return false"></textarea></td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="Enviar postulacion"></td>

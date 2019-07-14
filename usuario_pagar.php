@@ -1,3 +1,12 @@
+<script>
+  function volver(){
+    alert("Pago realizado con éxito");
+    location.href = "usuario_misviajes.php";
+  }
+
+</script>
+
+
 <?php
 
 include "conexion.php";

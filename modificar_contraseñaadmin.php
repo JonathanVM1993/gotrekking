@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones17.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -125,7 +125,7 @@
             <table>
               <tr>
                 <td>Ingrese nueva contraseña:</td>
-                <td><input type="password" id='txtPassword' name='txtPassword'></td>
+                <td><input type="password" id='txtPassword' name='txtPassword' onkeypress='return soloPassword(event)' onpaste='return false'></td>
               </tr>
               <tr>
                 <td><input type="button" value="Cambiar contraseña" style="margin-top:15px" onclick="mod_pass_admin()"></td>

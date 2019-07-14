@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones17.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -122,11 +122,11 @@
 							<table>
 		            <tr>
 		              <td><p>Nombre viaje:</p></td>
-		              <td><input type="text" class="sinborde" id="txtNombre" name="txtNombre"></td>
+		              <td><input type="text" class="sinborde" id="txtNombre" name="txtNombre" onkeypress="return sololetras(event)" onpaste="return false"></td>
 		            </tr>
 		            <tr>
 		              <td><p>Fecha viaje:</p></td>
-		              <td><input value="aa-mm-dd" type="datetime" class="sinborde" id="txtFecha" name="txtFecha" maxlength="10"></td>
+		              <td><input value="aa-mm-dd" type="datetime" class="sinborde" id="txtFecha" name="txtFecha" maxlength="10" onkeypress="return soloFecha(event)" onpaste="return false"></td>
 		            </tr>
 		            <tr>
 		              <td><p>Seleccionar guía:</p></td>
@@ -176,12 +176,12 @@
 		            </tr>
 		            <tr>
 		              <td><p>Descripcion viaje:</p></td>
-		              <td><textarea name="txtDescripcion" id="txtDescripcion"  cols="30" rows="10"></textarea>
+		              <td><textarea name="txtDescripcion" id="txtDescripcion"  cols="30" rows="10" onkeypress="return soloTextoGrande(event)" onpaste="return false"></textarea>
 		              </td>
 		            </tr>
 		            <tr>
 		              <td><p>Ubicación:</p></td>
-		              <td><input class="sinborde" type="text" name="txtUbicacion"  id="txtUbicacion"></td>
+		              <td><input class="sinborde" type="text" name="txtUbicacion"  id="txtUbicacion" onkeypress="return soloTextoGrande(event)" onpaste="return false"></td>
 		            </tr>
 		            <tr>
 		              <td><p>Nivel viaje:</p></td>
@@ -201,11 +201,11 @@
 		            </tr>
 		            <tr>
 		              <td><p>Precio viaje:</p></td>
-		              <td><input class="sinborde" type="text" name="txtPrecio"  id="txtPrecio"></td>
+		              <td><input class="sinborde" type="text" name="txtPrecio"  id="txtPrecio" onkeypress="return soloDinero(event)" onpaste="return false"></td>
 		            </tr>
 		            <tr>
 		              <td><p>Ingrese hora reunion:</p></td>
-		              <td><input class="sinborde" type="text" name="txtHora"  id="txtHora"></td>
+		              <td><input class="sinborde" type="text" name="txtHora"  id="txtHora" onkeypress="return soloHora(event)" onpaste="return false"></td>
 		            </tr>
 		            <tr>
 		              <td><input type="submit" value="Agregar" name ="btnR"id="btnR"></td>

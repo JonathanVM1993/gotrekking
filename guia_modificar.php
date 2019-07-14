@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones14.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -117,27 +117,27 @@
             <table>
           <tr>
             <td>Nombre:</td>
-            <td><input type="text" id="txtNombre" name="txtNombre"></td>
+            <td><input type="text" id="txtNombre" name="txtNombre" onkeypress="return sololetras(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td>Apellido paterno:</td>
-            <td><input type="text" id="txtApellidoP" name="txtApellidoP"></td>
+            <td><input type="text" id="txtApellidoP" name="txtApellidoP" onkeypress="return sololetras(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td>Apellido materno:</td>
-            <td><input type="text" id="txtApellidoM" name="txtApellidoM"></td>
+            <td><input type="text" id="txtApellidoM" name="txtApellidoM" onkeypress="return sololetras(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td>Rut:</td>
-            <td><input type="text" id="txtRut" name="txtRut"></td>
+            <td><input type="text" maxlength="10" id="txtRut" name="txtRut" onkeypress="return soloRut(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td>Télefono:</td>
-            <td><input type="text" id="txtTelefono" name="txtTelefono"></td>
+            <td><input type="text" id="txtTelefono" name="txtTelefono" onkeypress="return soloTelefono(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td>Correo:</td>
-            <td><input type="text" id="txtCorreo" name="txtCorreo"></td>
+            <td><input type="text" id="txtCorreo" name="txtCorreo" onkeypress="return soloEmail(event)" onpaste="return false"></td>
           </tr>
           <tr>
             <td><input type="button" onclick="modificarPerfilG()" value="Modificar"></td>

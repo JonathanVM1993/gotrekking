@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones21.js"></script>
+  <script src="js/jqueryajax.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -25,7 +26,6 @@
 
 	</script>
 	<script>
-
 		$(document).ready(function() {
 			//boton registrar
 			$("#btnIniciar").click(function(){
@@ -61,9 +61,9 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid fondonegro shadow rounded ">
+	<div class="container-fluid fondonegro ">
 		<div class="row">
-			<div class="col-2 fondonegro borde1 shadow rounded">
+			<div class="col-2 fondonegro borde1">
 			</div>
 	<div class="col-5 borde1 mgtop " >
 	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
@@ -107,7 +107,7 @@
 			}
 			else{
 				?>
-				<div class="col-12" style="margin-top:35px;">
+				<div class="col-12 borde1" style="margin-top:38px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
 				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL" onkeypress="return soloEmail(event)" onpaste="return false">
 						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL" onkeypress="return soloPassword(event)" onpaste="return false">
@@ -133,11 +133,29 @@
 				<br>
 				<p>Si deseas registrarte y obtener más información haz click <a href="registrarse.html">>>aquí<<</a></p>
 			</div>
+			<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 			<div class="col-5 "></div>
 		</div>
 	</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-
 </body>
 </html>

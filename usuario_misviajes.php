@@ -142,17 +142,22 @@
 	                echo "
 									<table class='table'>
 	                <tr>
-	                <td><p>$row2[0]</p></td>
-	                <td><p>$row2[1]</p></td>
-	                <td><p>$row2[2]</p></td>
-	                <td><p>$row2[3]</p></td>
-									<td><p>$row2[4]</p></td>
-	                <td><p>$estado_pago</p></td>
+	                <td><p>Viaje: $row2[0]</p></td>
+	                <td><p>Fecha: $row2[1]</p></td>
+	                <td><p>Lugar: $row2[2]</p></td>
+	                <td><p>Precio: $row2[3]</p></td>
+									<td><p>Hora reunion: $row2[4]</p></td>
+	                <td><p>Estado pago: $estado_pago</p></td>
 									";if($estado_pago==$estado_nopagado) {
 	                  echo "<p>Ya está pagado este viaje!</p>";
 	                }
 	                else{
-	                  echo "<td><button>Pagar</button></td>";
+	                  echo "<td>
+										<form action='portal_pago.php' method='POST'>
+										<input type=hidden id='id_viajes' name='id_viajes' value='$viaje'/>
+										<input type='submit' value='Pagar' />
+										</form>
+										</td>";
 	                } echo "</p></td>
 	                </tr>";echo"
 	                </table>";

@@ -8,7 +8,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb5.css">
+	<link rel="stylesheet" href="css/styleb7.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones21.js"></script>
@@ -139,8 +139,8 @@
 							$resultado = mysqli_fetch_array($buscar_nivel);
 							$nivel = $resultado[0];
 
-							echo "<div class='viaje1 contenedortr ' style='border-radius:20px; height:auto; '>
-							<div class='viaje_descripcion' style='padding:25px;'><p>Nombre viaje: $nombreviaje</p>
+							echo "<div class='viaje1 contenedortr ' style='border-radius:20px;'>
+							<div class='viaje_descripcion ' style='padding:25px;'><p>Nombre viaje: $nombreviaje</p>
 							<p>Fecha: $fecha</p>
 							<p>Ubicacion: $ubicacion</p>
 							<p>Descripcion: $descripcion</p>
@@ -153,15 +153,57 @@
               ";
 						  require_once("p_isLogin.php");
 							if ($estado) {
-								echo "<input type='button' class='clasebotones' value='Inscribirme' name ='btnR'id='btnR' onclick='irCuestionario()'>";
+								echo "<input type='button' class='clasebotones' value='Inscribirme' name ='btnR'id='btnR' onclick='irCuestionario()' style='margin-top:15px'>";
 							}else{echo "<p>Para inscribirte debes estar logueado</p>";}
 							echo "
 							</div>
-							<div class='imagen'> <img src='$rutaimagen1' width='100%' height='100%'> </div>
-							<div class='imagen'> <img src='$rutaimagen2' width='100%' height='100%'></div>
-							<div class='imagen'> <img src='$rutaimagen3' width='100%' height='100%'></div>
-							<div class='imagen'> <img src='$rutaimagen4' width='100%' height='100%'></div>
+							<div class='contenedorimagenes '>
+							<div class='card-columns'>
 
+							<div class='card' style='width:300px;'>
+							<a href='#' data-toggle='modal' data-target='#imagen1'>
+							<img src='$row[4]' class='card-img-top'>
+							</a>
+							</div>
+
+
+
+							<div class='card' style='width:300px;'>
+							<a href='#' data-toggle='modal' data-target='#Imagen2'>
+							 <img src='$row[5]' class='card-img-top'>
+							 </a>
+							 </div>
+
+
+
+							<div class='card' style='width:300px;'>
+							<a href='#' data-toggle='modal' data-target='#imagen3'>
+							 <img src='$rutaimagen3' class='card-img-top'>
+							 </a>
+							 </div>
+
+
+
+
+							<div class='card' style='width:300px;'>
+							<a href='#' data-toggle='modal' data-target='#imagen4'>
+							<img src='$rutaimagen4' class='card-img-top'>
+							</a>
+							</div>
+
+							<div class='modal fade' id='imagen4' tabindex='-1' role='dialog'>
+						 <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+						 <span aria-hidden='true'>&times;</span>
+						 </button>
+						 <div class='modal-dialog modal-lg modal-dialog-centered' role='document'>
+						 <img src='$rutaimagen3' class='img-fluid rounded'>
+						 </div>
+						 </div>
+
+
+
+							</div>
+							</div>
 						</div>";
 						}
 					 ?>

@@ -24,15 +24,15 @@ echo "
   <table>
    <tr>
      <td><p>Título noticia:</p></td>
-     <td><input type='text' id='txtNoticia' name='txtNoticia' placeholder='$row[1]'></td>
+     <td><input type='text' id='txtNoticia' name='txtNoticia' placeholder='$row[1]' onkeypress='return soloTextoGrande(event)' onpaste='return false'></td>
    </tr>
    <tr>
      <td><p>Fecha:</p></td>
-     <td><input type='text' id='txtFecha' name='txtFecha' placeholder='$row[2]'></textarea></td>
+     <td><input type='text' id='txtFecha' name='txtFecha' placeholder='$row[2]' onkeypress='return soloFecha(event)' onpaste='return false''></td>
    </tr>
    <tr>
      <td><p>Contenido noticia:</p></td>
-     <td><textarea name='txtContenido' id='txtContenido' placeholder='$row[3]' cols='30' rows='10'></textarea></td>
+     <td><textarea name='txtContenido' id='txtContenido' placeholder='$row[3]' cols='30' rows='10' onkeypress='return soloTextoGrande(event)' onpaste='return false'></textarea></td>
    </tr>
    <tr>
      <td><p>Modifique imagen:</p></td>
@@ -43,10 +43,14 @@ echo "
      <td><input type='button' value='Modificar noticia' name ='btnR'id='btnR' onclick='modificar_noticia()''</td>
    </tr>
    <tr>
-     <input type='hidden' value='$id_noticia2' id='id_noticia3' name='id_noticia3'  >
-     <td><input type='button' value='Volver' onclick='volverPanel()'  ></td>
+     <input type='hidden' value='$id_noticia2' id='id_noticia3' name='id_noticia3'>
+     <td><input type='button' value='Volver' onclick='volverPanel()'></td>
    </tr>
   </table>
+</form>
+<form method='POST'>
+  <input type='submit' value='Eliminar' name='eliminar'/>
+  <input type='hidden' value='$id_noticia2'  name='idn' id='idn'>
 </form>
 ";
 

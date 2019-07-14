@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones17.js"></script>
+	<script src="js/funciones21.js"></script>
   <script src="js/jqueryajax.js"></script>
 	<script>
 		function irModificar(){
@@ -127,31 +127,31 @@
 							<table class="tablaregistrar">
 								<tr>
 									<td><p>Correo:</p></td>
-									<td><input class="sinborde"  name="txtCorreo"   type="text" id="txtCorreo"></td>
+									<td><input class="sinborde"  name="txtCorreo"   type="text" id="txtCorreo" onkeypress="return soloEmail(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Nombres:</p></td>
-									<td><input class="sinborde" name="txtNombres"   type="text" id="txtNombres"></td>
+									<td><input class="sinborde" name="txtNombres"   type="text" id="txtNombres" onkeypress="return soloLetras(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Apellidos:</p></td>
-									<td><input class="sinborde" name="txtApellidos"   type="text" id="txtApellidos"></td>
+									<td><input class="sinborde" name="txtApellidos"   type="text" id="txtApellidos" onkeypress="return soloLetras(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Edad:</p></td>
-									<td><input class="sinborde" name="txtEdad"   type="text" id="txtEdad"></td>
+									<td><input class="sinborde" name="txtEdad"   type="text" id="txtEdad" onkeypress="return soloNumeros(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Rut:</p></td>
-									<td><input class="sinborde" name="txtRut"   type="text" id="txtRut"></td>
+									<td><input class="sinborde" name="txtRut"   type="text" id="txtRut" onkeypress="return soloRut(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Contraseña:</p></td>
-									<td><input class="sinborde" name="txtContraseña"  type="text" id="txtContraseña"></td>
+									<td><input class="sinborde" name="txtContraseña"  type="text" id="txtContraseña" onkeypress="return soloPassword(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Enfermedad:</p></td>
-									<td><input class="sinborde" name="txtEnfermedad"  type="text" id="txtEnfermedad"></td>
+									<td><input class="sinborde" name="txtEnfermedad"  type="text" id="txtEnfermedad" onkeypress="return soloTextoGrande(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Foto de perfil:</p></td>

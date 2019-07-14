@@ -120,10 +120,10 @@
 	</div>
 	</div>
 	</div>
-	<div class="col-12 contentainer-fluid border" style="height:900px;">
+	<div class="col-12 contentainer-fluid " style="height:900px;">
 		<div class="row">
-			<div class="col-1"></div>
-			<div class="col-10 containerpadre contenedortr" style="margin-top:50px;">
+			<div class="col-4"></div>
+			<div class="col-4 containerpadre contenedortr" style="margin-top:50px;">
 				<?php
 				include 'conexion.php';
 				$query = "SELECT * FROM t_noticia";
@@ -135,17 +135,17 @@
 					$ruta = $row[4];
 					echo "
 												<div class='noticia'>
-													<h1>$titulo</h>
+													<h1>$titulo</h1>
 													<br/>
 													<p>$contenido</p>
-													<img src='$ruta' width='200px' height='200px'>
+													<img src='$ruta' width='300px' height='200px'>
 												</div>
 			               ";
 				}
 				echo "</div>";
 				?>
 			</div>
-			<div class="col-1"></div>
+			<div class="col-4"></div>
 		</div>
 	</div>
 

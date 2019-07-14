@@ -6,6 +6,15 @@
 	function volverPanel(){
     location.href = 'panel_admin.php';
   }
+
+	function eliminarCorrecto(){
+		alert("Noticia eliminada");
+	}
+
+	function eliminarIncorrecto(){
+		alert("Error al eliminar noticia");
+	}
+
 </script>
 <?php
 		require 'isLoginAdmin.php';
@@ -31,7 +40,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones16.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -93,7 +102,7 @@
 			Modificar
 			</a>
 			<div class="dropdown-menu fondonegro">
-				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>				
+				<a class="dropdown-item" href="modificar_noticia.php">Modificar noticias</a>
 				<a class="dropdown-item" href="modificar_contraseñaadmin.php">Modificar contraseña</a>
 			</div>
 		</li>
@@ -126,6 +135,21 @@
 				<option value="$row1[0]" selected>Seleccione Noticia</option>
 				<?php
 					include 'conexion.php';
+
+					if (isset($_POST['eliminar'])) {
+					 $idnoticiae = $_POST['idn'];
+					 $queryeliminar = "DELETE FROM t_noticia WHERE id_noticia = $idnoticiae";
+						$ejecutar = mysqli_query($conexion, $queryeliminar);
+
+						if (!$ejecutar) {
+							echo "<script>eliminarIncorrecto()</script>";
+						}
+							else{
+								echo "<script>eliminarCorrecto()</script>";
+							}
+					}
+
+
 					$query = "SELECT * FROM t_noticia;";
 					$ejecutar = mysqli_query($conexion, $query);
 					while($row1=mysqli_fetch_array($ejecutar)){?>
@@ -136,8 +160,10 @@
 				<input type="button" onclick="mostrarNoticia()" value="Mostrar">
 				<input type='button' value='Volver' onclick='volverPanel()'>
 				</form>
+
 				<div class="cargando1" id="cargando1">
 				</div>
+
 			</div>
 			<div class="col-4"></div>
 		</div>

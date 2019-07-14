@@ -60,7 +60,7 @@ background-color: rgba(0, 0, 0, 0.6);
 /* usuario_viajes */
 
 .viaje1 {
-	height: auto;
+	height: 450px;
 	width: 1600px;
 	/* border: 1px solid black; */
 	margin-top: 10px;
@@ -78,19 +78,15 @@ background-color: rgba(0, 0, 0, 0.6);
 }
 
 .contenedorimagenes{
-  height: 280px;
-  width: 1000px;
+  height: 400px;
+  width: 1200px;
   float:left;
+  margin-top:33px;
 }
 
 .imagen{
 	height: 180px;
 	width: 250px;
-	/*border: 1px solid black; */
-	float: left;
-	margin-left: 10px;
-	margin-top: 60px;
-  border-radius: 5px;
 }
 .content-all{
 	height: 1000px;

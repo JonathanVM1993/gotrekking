@@ -37,8 +37,7 @@ if (!$ejecutar) {
   echo "<script>volver()</script>";
 }
 else{
-  echo "<script>exito()</script>";
-  echo "<script>volver()</script>";
+  echo "<script>exito()</script>";  
 }
 
 mysqli_close($conexion);
