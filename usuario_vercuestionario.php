@@ -37,7 +37,7 @@
 	<link rel="stylesheet" href="css/styleb6.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones10.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>

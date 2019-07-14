@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones20.js"></script>
+	<script src="js/funciones21.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery-3.3.1.slim.min"></script>
 	<script src="popper.min"></script>
@@ -61,9 +61,9 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid fondonegro ">
+	<div class="container-fluid fondonegro shadow rounded ">
 		<div class="row">
-			<div class="col-2 fondonegro borde1">
+			<div class="col-2 fondonegro borde1 shadow rounded">
 			</div>
 	<div class="col-5 borde1 mgtop " >
 	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
@@ -109,8 +109,8 @@
 				?>
 				<div class="col-12" style="margin-top:35px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
-				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL" onkeypress="return sololetras(event)">
-						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL" onkeypress="return soloNumeros(event)">
+				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL" onkeypress="return soloEmail(event)" onpaste="return false">
+						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL" onkeypress="return soloPassword(event)" onpaste="return false">
 						<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value="Iniciar sesion" id="btnIniciar"></p>
 						<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value= "Registrarse" onclick="irRegistrar()"></p>
 			</form>
