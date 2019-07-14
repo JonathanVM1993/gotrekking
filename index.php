@@ -11,8 +11,10 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones17.js"></script>
-  <script src="js/jqueryajax.js"></script>
+	<script src="js/funciones20.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		function irModificar(){
 			location.href = "modificar_usuario.php"
@@ -23,6 +25,7 @@
 
 	</script>
 	<script>
+
 		$(document).ready(function() {
 			//boton registrar
 			$("#btnIniciar").click(function(){
@@ -104,10 +107,10 @@
 			}
 			else{
 				?>
-				<div class="col-12 borde1" style="margin-top:35px;">
+				<div class="col-12" style="margin-top:35px;">
 			<form class="form-inline" name="formulario-registro" id="formulario-registro" enctype="multipart/form-data" method="post">
-				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL">
-						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL">
+				<input class="form-control mb-2 mr-sm-2 mgtop" type="text" placeholder="Ingrese correo" id="txtCorreoL" name="txtCorreoL" onkeypress="return sololetras(event)">
+						<input class="form-control mb-2 mr-sm-2 mgtop" type="password" placeholder="Contraseña" id="txtContraseñaL" name="txtContraseñaL" onkeypress="return soloNumeros(event)">
 						<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value="Iniciar sesion" id="btnIniciar"></p>
 						<input type="button" class="form-control mb-2 mr-sm-2 mgtop" value= "Registrarse" onclick="irRegistrar()"></p>
 			</form>
@@ -117,10 +120,10 @@
 	</div>
 	</div>
 	</div>
-	<div class="col-12 contentainer-fluid border" style="height:900px;">
+	<div class="col-12 contentainer-fluid " style="height:900px;">
 		<div class="row">
 			<div class="col-1 "></div>
-			<div class="col-6 containerpadre contenedortr border" style="margin-top:150px; height:400px;">
+			<div class="col-6 containerpadre contenedortr " style="margin-top:150px; height:400px;">
 				<strong><h1>Unete a la aventura de tu vida</h1></strong>
 				<p>Inscríbete para recibir fechas de actividades
 				noticias, consejos, datos de salidas,<br> talleres de Gotrekking.
@@ -135,8 +138,6 @@
 	</div>
 					<div class="cargando1" id="cargando1" style='display: none'>
 					</div>
-<script src="js/bootstrap.min.js"></script>
-<script src="jquery-3.3.1.slim.min"></script>
-<script src="popper.min"></script>
+
 </body>
 </html>

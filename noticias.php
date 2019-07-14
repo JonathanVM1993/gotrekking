@@ -11,8 +11,11 @@
 	<link rel="stylesheet" href="css/styleb5.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
-	<script src="js/funciones11.js"></script>
+	<script src="js/funciones20.js"></script>
   <script src="js/jqueryajax.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery-3.3.1.slim.min"></script>
+	<script src="popper.min"></script>
 	<script>
 		function irModificar(){
 			location.href = "modificar_usuario.php"
@@ -150,8 +153,6 @@
 					</div>
 
 
-	<script src="js/bootstrap.min.js"></script>
-	<script src="jquery-3.3.1.slim.min"></script>
-	<script src="popper.min"></script>
+
 </body>
 </html>

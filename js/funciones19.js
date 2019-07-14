@@ -224,7 +224,6 @@ function modificarPerfilG(){
 }
 
 function modificarViaje(){
-  alert("llega");
 	var parametros = new FormData($("#formmodificarv")[0]);
 	$.ajax({
 		url: "p_modificar_viaje.php",
@@ -244,4 +243,150 @@ function modificarViaje(){
 			$("#cargando1").html(parametroRetorno);
 		}
 	});
+}
+
+function modificar_noticia(){
+	var parametros = new FormData($("#formmnoticia1")[0]);
+	$.ajax({
+		url: "p_modificar_noticia.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function mod_pass_admin(){
+	var parametros = new FormData($("#formmpass")[0]);
+	$.ajax({
+		url: "p_modificar_padmin.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function mod_pass_usuario(){
+	var parametros = new FormData($("#formmpassU")[0]);
+	$.ajax({
+		url: "p_modificar_pusuario.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function mod_pass_guia(){
+	var parametros = new FormData($("#formmpassG")[0]);
+	$.ajax({
+		url: "p_modificar_pguia.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function agregarFotoGuia(){
+	var parametros = new FormData($("#formsubirfotog")[0]);
+	$.ajax({
+		url: "p_subir_fotoguia.php",
+		type: "post",
+		data: parametros,
+		contentType: false,
+		processData: false,
+		error: function(){
+					//definir un proceso en el caso de algun error
+					alert("Ha ocurrido un error");
+				},
+		beforesend: function(){
+		$("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+		},
+		success: function(parametroRetorno){
+      $("#cargando1").html("<img src='img/loading2.gif'width='200px' height='200px' />");
+			$("#cargando1").html(parametroRetorno);
+		}
+	});
+}
+
+function sololetras(e){
+key= e.keyCode || e.which;
+teclado= String.fromCharCode(key).toLowerCase();
+letras = " @abcdefghijklmnopqrstuvwxyz";
+especiales= "8-37-38-46-164";
+
+teclado_especial = false;
+
+for (var i in especiales) {
+	if (key==especiales[i]) {
+		teclado_especial=true;break;
+	}
+}
+if(letras.indexOf(teclado)==-1 && !teclado_especial){
+return false;
+}
+}
+
+function soloNumeros(e){
+key= e.keyCode || e.which;
+teclado= String.fromCharCode(key).toLowerCase();
+letras = "1234567890";
+especiales= "8-37-38-46-164";
+
+teclado_especial = false;
+
+for (var i in especiales) {
+	if (key==especiales[i]) {
+		teclado_especial=true;break;
+	}
+}
+if(letras.indexOf(teclado)==-1 && !teclado_especial){
+return false;
+}
 }
