@@ -2,9 +2,10 @@
 
 include 'conexion.php';
 
-$idnoticia = $_POST['idn'];
 
-echo "$idnoticia";
+$id = $_POST['id_v'];
+
+echo "$id";
 
 
  ?>

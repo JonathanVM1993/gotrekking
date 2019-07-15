@@ -8,7 +8,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb5.css">
+	<link rel="stylesheet" href="css/styleb8.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones21.js"></script>
@@ -60,9 +60,9 @@
 <body>
 	<div class="container-fluid fondonegro ">
 		<div class="row">
-			<div class="col-3 fondonegro borde1">
+			<div class="col-3 fondonegro borde1 logo" >
 			</div>
-	<div class="col-4 borde1 mgtop " >
+	<div class="col-5 borde1 mgtop " >
 	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
 		<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
 		<li class="nav-item"><a href="noticias.php" class="nav-link">Noticias</a></li>
@@ -70,7 +70,7 @@
 		<li class="nav-item"><a href="usuario_postulacion.php" class="nav-link">Postularme como guia</a></li>
 	</ul>
 	</div>
-	<div class="col-5 borde1">
+	<div class="col-4 borde1">
 		<?php
 		require_once("p_isLogin.php");
 		if ($estado) {
@@ -127,11 +127,11 @@
 							<table class="tablaregistrar">
 								<tr>
 									<td><p>Correo:</p></td>
-									<td><input class="sinborde"  name="txtCorreo"   type="text" id="txtCorreo" onkeypress="return soloEmail(event)" onpaste="return false"></td>
+									<td><input class="sinborde"  name="txtCorreo" min="1"  type="text" id="txtCorreo" onkeypress="return soloEmail(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Nombres:</p></td>
-									<td><input class="sinborde" name="txtNombres"   type="text" id="txtNombres" onkeypress="return soloLetras(event)" onpaste="return false"></td>
+									<td><input class="sinborde" name="txtNombres"  min"1" type="text" id="txtNombres" onkeypress="return soloLetras(event)" onpaste="return false" required></td>
 								</tr>
 								<tr>
 									<td><p>Apellidos:</p></td>
@@ -143,7 +143,7 @@
 								</tr>
 								<tr>
 									<td><p>Rut:</p></td>
-									<td><input class="sinborde" name="txtRut"   type="text" id="txtRut" onkeypress="return soloRut(event)" onpaste="return false"></td>
+									<td><input class="sinborde" name="txtRut"  maxlength="10" type="text" id="txtRut" onkeypress="return soloRut(event)" onpaste="return false"></td>
 								</tr>
 								<tr>
 									<td><p>Contraseña:</p></td>

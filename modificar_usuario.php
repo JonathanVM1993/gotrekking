@@ -8,7 +8,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/styleb5.css">
+	<link rel="stylesheet" href="css/styleb8.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
 	<script src="js/jqueryajax.js"></script>
 	<script src="js/funciones21.js"></script>
@@ -60,7 +60,7 @@
 <body>
 	<div class="container-fluid fondonegro ">
 		<div class="row">
-			<div class="col-2 fondonegro borde1">
+			<div class="col-3 fondonegro borde1 logo" >
 			</div>
 	<div class="col-5 borde1 mgtop " >
 	<ul class="nav fondonegro justify-content-center mr-auto mt-2 mt-md-0 mgtop" style="padding:40px" >
@@ -71,7 +71,7 @@
 		<li class="nav-item"><a href="usuario_verguias.php" class="nav-link">Conoce los guías</a></li>
 	</ul>
 	</div>
-	<div class="col-5 borde1">
+	<div class="col-4 borde1">
 		<?php
 		require_once("p_isLogin.php");
 		if ($estado) {
@@ -134,7 +134,7 @@
             <table class='table-responsive'>
               <tr>
                 <td><p>Correo:</p></td>
-                <td><input type='text' id='txtCorreo' name='txtCorreo'  placeholder='$getCorreo'></td>
+                <td><input type='text' id='txtCorreo' name='txtCorreo' disabled placeholder='$getCorreo'></td>
               </tr>
               <tr>
                 <td><p>Nombres:</p></td>

@@ -21,7 +21,7 @@
 require('p_isLogin.php');
 include "conexion.php";
 
-$correom = $_POST['txtCorreo'];
+
 $nombrem = $_POST['txtNombres'];
 $apellidosm = $_POST['txtApellidos'];
 $rutm = $_POST['txtRut'];
@@ -36,7 +36,7 @@ $nom = $nom_random;
 $ruta= "fotousuarios/".$nom.".jpg";
 move_uploaded_file($fotom["tmp_name"], $ruta);
 
-$queryM = "UPDATE t_usuario SET correo='$correom', nombres='$nombrem', apellidos='$apellidosm',rut='$rutm',imagen='$ruta' WHERE id_usuario='$getId'";
+$queryM = "UPDATE t_usuario SET nombres='$nombrem', apellidos='$apellidosm',rut='$rutm',imagen='$ruta' WHERE id_usuario='$getId'";
 $ejecutar = mysqli_query($conexion, $queryM);
 
 if (!$ejecutar) {

@@ -1,15 +1,23 @@
 <script>
 	function registroExito(){
-		alert("Bienvenido usuario :");
+		alert("Bienvenido usuario");
 	}
 
 	function probando(){
 		alert("Verificando");
 	}
 
+	function campoVacio(){
+		alert("No pueden haber campos vacíos");
+	}
+
+	function subirImagen(){
+		alert("Por favor suba una imagen de perfil");
+	}
+
 </script>
 
-<script src="js/funciones2.js"></script>
+
 
 <?php
 	    include 'conexion.php';
@@ -22,6 +30,24 @@
 			$password1 = $_POST['txtContraseña'];
 			$enfermedad1 = $_POST['txtEnfermedad'];
 			$foto = $_FILES['foto'];
+			$nombreArchivo = $_FILES['foto']['tmp_name'];
+
+
+
+
+
+
+			if (trim($nombres1) == "" ||trim($correo1) == "" ||trim($apellidos1) == "" ||trim($rut1) == "" ||trim($password1) == "" || empty($foto) ||trim($enfermedad1) == "" ) {
+				echo "<script>campoVacio()</script>";
+				exit;
+			}
+
+			if (empty($nombreArchivo)) {
+				echo "<script>subirImagen()</script>";
+				exit;
+			}
+
+
 
 			$nombreArchivo = $_FILES['foto']['tmp_name'];
 
@@ -43,7 +69,6 @@
 
 			if (mysqli_num_rows($verificar_usuario) > 0) {
 				echo "El usuario ya se encuentra registrado con este correo";
-				echo "<script>registroExito()</script>";
 				exit;
 			}
 

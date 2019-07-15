@@ -3,7 +3,26 @@ function volverUsuarioViajes(){
 	location.href = "usuario_viajes.php";
 }
 
+function noSesion(){
+
+	alert("Debe estar logueado primero");
+}
+
+
+$id_via = $_POST['id_v'];
 </script>
+<?php
+		require 'p_isLogin.php';
+    include 'conexion.php';
+    if (isset($_SESSION["usuario2"])) {
+    }
+    else{
+    	echo "<script>noSesion()</script>";
+			header("location: index.php");
+			exit;
+    }
+    mysqli_close($conexion);
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,17 +146,25 @@ function volverUsuarioViajes(){
 			<div class="col-4 "></div>
 			<div class="col-4 contenedortr containerpadre" style="margin-top:25px"><div class="cuestionario" id="cuestionario">
 				<form action="p_ingresarcuestionario.php" name="formcuestionario" id="formcuestionario" enctype="multipart/form-data" method="post">
-				<p>¿Que viaje deseas realizar?</p>
-				<select name="id_viaje" id="id_viaje">
-					<option value="$row[0]" selected>Eligir viaje</option>
+
 					<?php
+					error_reporting(E_ERROR | E_PARSE);
+
 					include "conexion.php";
-				$query = "SELECT * from t_viaje";
-				$mostrar1 = mysqli_query($conexion,$query);
-					while ($row=mysqli_fetch_array($mostrar1))
-						{?>
-						<option value="<?php echo "$row[0]";?>"><?php echo "$row[1]"?></option>
-						<?php } ?>
+
+					$id_viaje5 = $_POST['id_v'];
+					$query = "SELECT * FROM t_viaje where id_viaje=".$_POST['id_v']."";
+					$ejecutar1 = mysqli_query($conexion, $query);
+					while ($row2=mysqli_fetch_array($ejecutar1))
+					{
+						echo "Inscribiendose al viaje:  ";
+						echo $row2[1];
+					}
+
+					 ?>
+
+				 </p>
+
 				</select>
 				<p>¿Has realizado trekking anteriormente?</p>
 				<input type="radio" name="realizado" value="Si">Si<br>
@@ -145,24 +172,23 @@ function volverUsuarioViajes(){
 				<p>¿Que equipamento Outdoor posees?</p>
 				<p>Calzado:</p>
 				<select name="calzado" id="calzado">
-					<option value="">         </option>
-					<option value="Si">Si</option>
+					<option value="Si" selected >Si</option>
 					<option value="No">No</option>
 				</select>
 				<p>Primera o segunda capa:</p>
 				<select name="capa" id="capa">
-					<option value="">         </option>
-					<option value="No">No</option>
+					<option value="No" selected>No</option>
 					<option value="Primera">Primera</option>
 					<option value="Segunda">Segunda</option>
 					<option value="Ambas">Ambas</option>
 				</select>
 				<p>Baston de apoyo</p>
 				<select name="baston" id="baston">
-					<option value="">         </option>
-					<option value="Si">Si</option>
+					<option value="Si" selected>Si</option>
 					<option value="No">No</option>
 				</select>
+
+
 				<p>¿Cuanta actividad física realizas a la semana?</p>
 				<input type="radio" name="actividad" value="0">Ninguna<br>
 				<input type="radio" name="actividad" value="1">1 vez<br>
@@ -187,6 +213,11 @@ function volverUsuarioViajes(){
 					<option value="<?php echo "$row2[0]";?>"><?php echo "$row2[1]"?></option>
 					<?php } ?>
 			</select>
+
+			<?php
+
+			?>
+			<input type="hidden" id="id_viaje" name='id_viaje' value='<?php echo $_POST['id_v'];?>'>
 			<input type="submit" value="Enviar cuestionario">
 				</form>
 				<input type='button' value='Volver' onclick='volverUsuarioViajes()'>

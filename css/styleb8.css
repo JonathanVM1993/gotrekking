@@ -34,8 +34,8 @@ a{
 }
 
 .logo{
-  background: url("../logo.png");
-  background-size: 100% 100%;
+  background-image: url("../img/logotrekking.png");
+  background-size: 470px 150px;
 }
 
 

@@ -12,6 +12,10 @@
       alert("No se ha podido enviar el cuestionario");
     }
 
+    function errorSelected(){
+      alert("Campos Vacios Seleceted");
+    }
+
 </script>
 
 <?php
@@ -22,6 +26,7 @@ include "conexion.php";
 $id_usuario = $getId;
 $nivel_experiencia1 = $_POST['id_nivel'];
 $idViaje = $_POST['id_viaje'];
+var_dump($_POST['id_viaje']);
 $trekking_anterior1 = $_POST['realizado'];
 $calzado = $_POST['calzado'];
 $capa1 = $_POST['capa'];
@@ -31,7 +36,15 @@ $estatura1 = $_POST['altura'];
 $peso1 = $_POST['peso'];
 $enfermedad1 = $_POST['problema'];
 
-
+if ($_POST['baston'] == "")
+{
+  var_dump($baston1);
+  echo "<script>errorSelected()</script>";
+}
+echo $baston1;
+/*
+if($_POST['baston'] == )
+*/
 // 11  3  1     Si        Si    Primera    Si    4    1,70   70kg     Ninguna //
 // id lvl idv   ant      calzado   capa  baston act  estatura peso   Enfermedad
 $query = "INSERT INTO cuestionario(usuario_cuestionario,nivel_experiencia,viaje_cuestionario,trekking_anterior
@@ -68,6 +81,7 @@ else{
 }
 if (!$agregar_lista) {
   echo "Usuario no se ha podido inscribir en la lista del viaje";
+  echo $baston1;
 }
 
 
